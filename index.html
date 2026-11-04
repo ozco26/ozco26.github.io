@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>José Pablo Orozco · Software Engineer</title>
+<meta name="description" content="Software Engineer en Costa Rica. APIs, integraciones, IoT y despliegue en la nube con Python, Flask, FastAPI, Vue y AWS.">
+<meta property="og:title" content="José Pablo Orozco Salas · Software Engineer">
+<meta property="og:description" content="Software Engineer en Costa Rica. APIs, integraciones, IoT y despliegue en la nube con Python, Flask, FastAPI, Vue y AWS.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ozco26.github.io/">
+<meta property="og:image" content="https://ozco26.github.io/img/marcasegura.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400;62..125,500;62..125,600;62..125,800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: hoja de datos técnica. Cada proyecto es una ficha con filas de especificación, como las fichas de producto que José redactaba en Legrand. */
+:root {
+  --paper: #F3F5F2;
+  --sheet: #FFFFFF;
+  --ink: #15201C;
+  --muted: #5B6862;
+  --rule: #D5DCD8;
+  --signal: #2442C9;
+  --signal-soft: #E6EAFB;
+  --font-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0E1412; --sheet: #151D1A; --ink: #E5EBE8; --muted: #93A19B;
+    --rule: #26312D; --signal: #93A6FF; --signal-soft: #1C2445; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0E1412; --sheet: #151D1A; --ink: #E5EBE8; --muted: #93A19B;
+  --rule: #26312D; --signal: #93A6FF; --signal-soft: #1C2445; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0;
+}
+.wrap { max-width: 1040px; margin: 0 auto; display: grid; gap: 72px; padding-block: 56px 72px; }
+a { color: var(--signal); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--signal); outline-offset: 3px; border-radius: 2px; }
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; margin: 0; }
+p { margin: 0; }
+.label {
+  font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--muted);
+}
+
+.shot { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; object-position: top; border-bottom: 1px solid var(--rule); background: var(--paper); }
+.feature .shot { aspect-ratio: 21 / 8; }
+
+/* Encabezado */
+header { display: grid; gap: 28px; }
+.id-line { display: flex; flex-wrap: wrap; gap: 8px 20px; align-items: baseline; }
+h1 {
+  font-size: clamp(2.6rem, 7vw, 4.8rem); line-height: 0.95;
+  font-weight: 800; font-stretch: 112%; letter-spacing: -0.02em;
+}
+.role { font-size: clamp(1.1rem, 2.4vw, 1.4rem); font-weight: 500; max-width: 38ch; }
+.role strong { color: var(--signal); font-weight: 600; }
+.pitch { max-width: 62ch; color: var(--muted); }
+.contact { display: flex; flex-wrap: wrap; gap: 10px; }
+.chip {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-mono); font-size: 13px;
+  border: 1px solid var(--rule); background: var(--sheet); color: var(--ink);
+  padding: 8px 12px; border-radius: 3px; text-decoration: none;
+}
+a.chip:hover { border-color: var(--signal); color: var(--signal); }
+.chip button {
+  font: inherit; font-size: 12px; background: none; border: 0; color: var(--signal);
+  cursor: pointer; padding: 0; text-decoration: underline; text-underline-offset: 3px;
+}
+.status {
+  display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 13px; color: var(--muted);
+}
+.status::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #1F9D61; }
+
+/* Secciones */
+section { display: grid; gap: 24px; }
+.sec-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; border-bottom: 2px solid var(--ink); padding-bottom: 10px; flex-wrap: wrap; }
+h2 { font-size: 1.6rem; font-weight: 800; font-stretch: 108%; letter-spacing: -0.01em; }
+
+/* Fichas de proyecto */
+.sheets { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.sheet {
+  background: var(--sheet); border: 1px solid var(--rule); border-radius: 4px;
+  display: grid; grid-template-rows: auto 1fr auto; min-width: 0;
+}
+.sheet.feature { grid-column: 1 / -1; }
+.sheet-top { display: flex; justify-content: space-between; gap: 12px; padding: 14px 20px; border-bottom: 1px solid var(--rule); flex-wrap: wrap; }
+.sheet-body { padding: 20px; display: grid; gap: 16px; align-content: start; min-width: 0; }
+.sheet h3 { font-size: 1.5rem; font-weight: 800; font-stretch: 104%; letter-spacing: -0.01em; }
+.feature h3 { font-size: clamp(1.7rem, 4vw, 2.3rem); }
+.sheet .lede { max-width: 62ch; }
+.tag { font-family: var(--font-mono); font-size: 12px; padding: 2px 8px; border-radius: 2px; background: var(--signal-soft); color: var(--signal); }
+.specs { display: grid; grid-template-columns: minmax(96px, auto) 1fr; border-top: 1px solid var(--rule); }
+.specs dt, .specs dd { margin: 0; padding: 9px 0; border-bottom: 1px solid var(--rule); font-size: 14.5px; }
+.specs dt { font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); padding-right: 16px; padding-top: 11px; }
+.highlights { margin: 0; padding-left: 18px; display: grid; gap: 6px; font-size: 15px; }
+.sheet-foot { padding: 12px 20px; border-top: 1px solid var(--rule); display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-size: 14px; }
+.sheet-foot .label { align-self: center; }
+
+.feature-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 28px; }
+
+/* Pipeline de despliegue */
+.pipeline { display: grid; gap: 10px; align-content: start; }
+.flow { display: flex; flex-wrap: wrap; align-items: stretch; gap: 0; }
+.step {
+  flex: 1 1 110px; border: 1px solid var(--rule); padding: 10px 12px; display: grid; gap: 2px;
+  background: var(--paper); margin-left: -1px; margin-top: -1px; min-width: 0;
+}
+.step b { font-size: 14px; font-weight: 600; }
+.step span { font-family: var(--font-mono); font-size: 11.5px; color: var(--muted); }
+.step.end { background: var(--signal-soft); border-color: var(--signal); position: relative; z-index: 1; }
+.step.end b { color: var(--signal); }
+
+/* Experiencia */
+.timeline { display: grid; gap: 0; }
+.job { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 20px; padding: 16px 0; border-bottom: 1px solid var(--rule); }
+.job .when { font-family: var(--font-mono); font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; padding-top: 2px; }
+.job h3 { font-size: 1.1rem; font-weight: 600; font-stretch: 100%; }
+.job h3 span { font-weight: 400; color: var(--muted); }
+.job p { color: var(--muted); font-size: 15px; max-width: 70ch; margin-top: 4px; }
+.job.earlier h3 { font-size: 1rem; }
+
+/* Stack */
+.stack { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.stack div { display: grid; gap: 8px; align-content: start; }
+.stack ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.stack li { font-family: var(--font-mono); font-size: 13px; border: 1px solid var(--rule); padding: 3px 8px; border-radius: 2px; background: var(--sheet); }
+
+.edu { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.edu div { border-top: 1px solid var(--rule); padding-top: 12px; display: grid; gap: 4px; align-content: start; }
+.edu b { font-weight: 600; }
+.edu span { color: var(--muted); font-size: 14.5px; }
+
+footer { border-top: 2px solid var(--ink); padding-top: 20px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; align-items: center; }
+footer p { font-family: var(--font-display); font-weight: 600; font-size: 1.2rem; max-width: 40ch; }
+
+@media (max-width: 760px) {
+  .sheets, .feature-grid, .stack, .edu { grid-template-columns: 1fr; }
+  .job { grid-template-columns: 1fr; gap: 4px; }
+  .wrap { gap: 56px; padding-block: 36px 56px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .sheet { transition: border-color 160ms ease; }
+  .sheet:hover { border-color: var(--muted); }
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <div class="id-line">
+      <span class="label">Heredia, Costa Rica · UTC-6</span>
+      <span class="status">Disponible para roles remotos o híbridos</span>
+    </div>
+    <h1>José Pablo<br>Orozco Salas</h1>
+    <p class="role">Software Engineer. Diseño <strong>APIs, integraciones y sistemas IoT</strong> de punta a punta, con rumbo a la arquitectura de software.</p>
+    <p class="pitch">Ingeniero en Informática e Ingeniero Eléctrico. Antes de dedicarme al software pasé más de diez años en proyectos de infraestructura, soporte técnico y ventas técnicas, así que diseño sistemas pensando en quién los va a usar y en qué problema de negocio resuelven.</p>
+    <div class="contact">
+      <span class="chip"><span id="mail">orozco26pablo@gmail.com</span><button type="button" id="copy-mail">Copiar</button></span>
+      <a class="chip" href="https://github.com/ozco26" target="_blank" rel="noopener">github.com/ozco26</a>
+      <a class="chip" href="https://www.linkedin.com/in/jos%C3%A9-pablo-orozco-salas-8b766bb8/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="chip" href="https://platzi.com/p/porozco358/" target="_blank" rel="noopener">Platzi</a>
+    </div>
+  </header>
+
+  <section aria-labelledby="proyectos">
+    <div class="sec-head">
+      <h2 id="proyectos">Proyectos</h2>
+      <span class="label">Fichas técnicas</span>
+    </div>
+
+    <div class="sheets">
+      <article class="sheet feature">
+        <div class="sheet-top">
+          <span class="label">ozco26/MarcaSegura · 2026</span>
+          <span class="tag">Desplegado en AWS</span>
+        </div>
+        <img class="shot" src="img/marcasegura.jpg" alt="Auditoría de marcas en MarcaSegura" width="1200" height="675">
+        <div class="sheet-body">
+          <div class="feature-grid">
+            <div style="display:grid; gap:16px; align-content:start; min-width:0">
+              <h3>MarcaSegura</h3>
+              <p class="lede">Sistema de control de asistencia con marcas geolocalizadas. Valida que cada entrada y salida venga de un dispositivo autorizado y de una ubicación plausible, y avisa a los administradores cuando algo no cuadra.</p>
+              <ul class="highlights">
+                <li>Detección de ubicaciones anómalas: distancia Haversine entre marcas y un límite de velocidad físicamente plausible (200 km/h).</li>
+                <li>Registro, autorización y bloqueo de dispositivos por empleado.</li>
+                <li>Bloqueo por intentos fallidos de inicio de sesión, con alertas por correo.</li>
+                <li>Bitácora de auditoría e incidentes clasificados por severidad.</li>
+              </ul>
+            </div>
+            <div style="display:grid; gap:16px; align-content:start; min-width:0">
+              <dl class="specs">
+                <dt>Backend</dt><dd>Python · Flask, organizado en servicios y blueprints</dd>
+                <dt>Datos</dt><dd>MySQL · SQLAlchemy · migraciones con Alembic</dd>
+                <dt>Seguridad</dt><dd>JWT en cookies HttpOnly con protección CSRF · roles</dd>
+                <dt>Pruebas</dt><dd>pytest · más de 1.000 líneas de pruebas</dd>
+                <dt>Despliegue</dt><dd>GitHub Actions → AWS Elastic Beanstalk, con acceso por rol IAM (OIDC), sin llaves guardadas</dd>
+              </dl>
+              <div class="pipeline">
+                <span class="label">Pipeline en cada push a main</span>
+                <div class="flow" role="list">
+                  <div class="step" role="listitem"><b>Push</b><span>main</span></div>
+                  <div class="step" role="listitem"><b>Pruebas</b><span>pytest</span></div>
+                  <div class="step" role="listitem"><b>Credenciales</b><span>OIDC · IAM</span></div>
+                  <div class="step end" role="listitem"><b>Deploy</b><span>Elastic Beanstalk</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sheet-foot">
+          <span class="label">Rol: desarrollo y despliegue</span>
+          <a href="https://github.com/ozco26/MarcaSegura" target="_blank" rel="noopener">Ver código</a>
+        </div>
+      </article>
+
+      <article class="sheet">
+        <div class="sheet-top">
+          <span class="label">ozco26/EmotionTrack · 2026</span>
+          <span class="tag">IA</span>
+        </div>
+        <img class="shot" src="img/emotiontrack.jpg" alt="Chat de análisis de llamadas en EmotionTrack" width="1200" height="675">
+        <div class="sheet-body">
+          <h3>EmotionTrack</h3>
+          <p class="lede">Asistente para analizar llamadas grabadas: transcribe los audios y responde preguntas sobre lo que se dijo, citando la evidencia de la transcripción.</p>
+          <dl class="specs">
+            <dt>Backend</dt><dd>Python · Flask</dd>
+            <dt>Voz</dt><dd>Whisper, transcripción local</dd>
+            <dt>IA</dt><dd>RAG con LlamaIndex · Llama 3.1 en Groq</dd>
+          </dl>
+        </div>
+        <div class="sheet-foot">
+          <span class="label">Proyecto personal</span>
+          <a href="https://github.com/ozco26/EmotionTrack" target="_blank" rel="noopener">Ver código</a>
+        </div>
+      </article>
+
+      <article class="sheet">
+        <div class="sheet-top">
+          <span class="label">MrBot Software Solutions · 2025–2026</span>
+          <span class="tag">IoT</span>
+        </div>
+        <div class="sheet-body">
+          <h3>Plataforma IoT</h3>
+          <p class="lede">Aplicación de punta a punta desarrollada en equipo: los datos viajan desde las estaciones en campo hasta un backend y una interfaz web.</p>
+          <dl class="specs">
+            <dt>Backend</dt><dd>Python · FastAPI</dd>
+            <dt>Datos</dt><dd>PostgreSQL</dd>
+            <dt>Frontend</dt><dd>Vue + Vite</dd>
+            <dt>Equipo</dt><dd>Scrum, entregas incrementales</dd>
+          </dl>
+        </div>
+        <div class="sheet-foot">
+          <span class="label">Proyecto laboral</span>
+          <span style="color:var(--muted)">Código privado del cliente</span>
+        </div>
+      </article>
+
+      <article class="sheet">
+        <div class="sheet-top">
+          <span class="label">ozco26/V-Vuelos · 2024</span>
+          <span class="tag">Equipo</span>
+        </div>
+        <img class="shot" src="img/v-vuelos.jpg" alt="Tablero de salidas de V-Vuelos" width="1200" height="675">
+        <div class="sheet-body">
+          <h3>V-Vuelos</h3>
+          <p class="lede">Sistema integral que simula la operación de un aeropuerto: portal de pasajeros para buscar y comprar vuelos, y panel administrativo para la operación.</p>
+          <ul class="highlights">
+            <li>Pasajeros: búsqueda de llegadas y salidas, compra, tarjetas y métodos de pago, reCAPTCHA e inicio de sesión con Google.</li>
+            <li>Administración: aerolíneas por país, estado de puertas, usuarios y permisos, bitácora y registro de errores.</li>
+          </ul>
+          <dl class="specs">
+            <dt>Stack</dt><dd>C# · ASP.NET MVC · Entity Framework · SQL Server · Bootstrap</dd>
+          </dl>
+        </div>
+        <div class="sheet-foot">
+          <span class="label">Proyecto académico en equipo</span>
+          <a href="https://github.com/ozco26/V-Vuelos" target="_blank" rel="noopener">Ver código</a>
+        </div>
+      </article>
+
+      <article class="sheet">
+        <div class="sheet-top">
+          <span class="label">ozco26/Mr-books · 2023</span>
+          <span class="tag">Marketplace</span>
+        </div>
+        <img class="shot" src="img/mr-books.jpg" alt="Catálogo de Mr. Books" width="1200" height="675">
+        <div class="sheet-body">
+          <h3>Mr. Books</h3>
+          <p class="lede">Marketplace para intercambiar y vender libros usados, con tres perfiles: cliente, vendedor y administrador.</p>
+          <ul class="highlights">
+            <li>Publicación de libros con aprobación del administrador antes de salir a la venta.</li>
+            <li>Catálogo por categorías, carrito, pago y seguimiento de pedidos.</li>
+          </ul>
+          <dl class="specs">
+            <dt>Stack</dt><dd>Node.js · Express · EJS · MySQL</dd>
+          </dl>
+        </div>
+        <div class="sheet-foot">
+          <span class="label">Proyecto académico</span>
+          <a href="https://github.com/ozco26/Mr-books" target="_blank" rel="noopener">Ver código</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section aria-labelledby="experiencia">
+    <div class="sec-head">
+      <h2 id="experiencia">Experiencia</h2>
+      <span class="label">2013 – hoy</span>
+    </div>
+    <div class="timeline">
+      <div class="job">
+        <span class="when">2025 – hoy</span>
+        <div><h3>Software Engineer <span>· MrBot Software Solutions · remoto</span></h3>
+        <p>APIs REST e integraciones, aplicación IoT con FastAPI, PostgreSQL y Vue, despliegues automatizados en Linux y 20% más de cobertura de pruebas en el producto principal.</p></div>
+      </div>
+      <div class="job">
+        <span class="when">2023 – 2024</span>
+        <div><h3>Desarrollador web <span>· Freelance</span></h3>
+        <p>Aplicaciones web con Node.js y SQL, incluido un sistema de e-commerce.</p></div>
+      </div>
+      <div class="job">
+        <span class="when">2019</span>
+        <div><h3>Ingeniero de desarrollo de software <span>· Veinsa Motors</span></h3>
+        <p>Automatización de leads, integración con Facebook y con sistemas de terceros, plataforma interna de tickets.</p></div>
+      </div>
+      <div class="job earlier">
+        <span class="when">2013 – 2025</span>
+        <div><h3>Ingeniería de proyectos, soporte y ventas técnicas <span>· Legrand, Grupo VMA, Bolwar, COCOCO y otras</span></h3>
+        <p>Soluciones de redes, datacenter y seguridad para Centroamérica, el Caribe y Ecuador; herramientas internas que redujeron más de 10% el trabajo manual; licitaciones públicas en SICOP.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="stack">
+    <div class="sec-head">
+      <h2 id="stack">Herramientas</h2>
+      <span class="label">Con las que trabajo</span>
+    </div>
+    <div class="stack">
+      <div><span class="label">Backend y datos</span>
+        <ul><li>Python</li><li>FastAPI</li><li>Flask</li><li>Node.js</li><li>C# / .NET</li><li>PostgreSQL</li><li>MySQL</li><li>SQL Server</li><li>SQLAlchemy</li></ul></div>
+      <div><span class="label">Entrega y operación</span>
+        <ul><li>Git</li><li>GitHub Actions</li><li>AWS Elastic Beanstalk</li><li>Linux</li><li>Bash</li><li>pytest</li><li>unittest</li><li>Scrum</li></ul></div>
+      <div><span class="label">Frontend, IoT y automatización</span>
+        <ul><li>Vue + Vite</li><li>Figma</li><li>C++ / Arduino</li><li>n8n</li><li>Agentes de IA</li></ul></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="formacion">
+    <div class="sec-head">
+      <h2 id="formacion">Formación</h2>
+      <span class="label">Universitaria</span>
+    </div>
+    <div class="edu">
+      <div><b>Bachillerato en Ingeniería Informática</b><span>ULACIT · graduación en diciembre de 2026</span></div>
+      <div><b>Licenciatura en Ingeniería Eléctrica</b><span>Universidad Fidélitas · plan de estudios concluido</span></div>
+      <div><b>Inglés intermedio-alto</b><span>TOEIC 780/990 · Listening 455 (nivel B2)</span></div>
+    </div>
+  </section>
+
+  <footer>
+    <p>¿Buscas a alguien que entienda el sistema y el negocio detrás?</p>
+    <a class="chip" href="https://www.linkedin.com/in/jos%C3%A9-pablo-orozco-salas-8b766bb8/" target="_blank" rel="noopener">Escríbeme por LinkedIn</a>
+  </footer>
+</div>
+
+<script>
+  document.getElementById("copy-mail").addEventListener("click", function () {
+    var btn = this, text = document.getElementById("mail").textContent;
+    function done(msg) { btn.textContent = msg; setTimeout(function () { btn.textContent = "Copiar"; }, 1800); }
+    function fallback() {
+      var r = document.createRange(); r.selectNodeContents(document.getElementById("mail"));
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); done("Seleccionado");
+    }
+    try {
+      navigator.clipboard.writeText(text).then(function () { done("Copiado"); }, fallback);
+    } catch (e) { fallback(); }
+  });
+</script>
+
+</body>
+</html>
