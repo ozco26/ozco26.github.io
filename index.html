@@ -1,403 +1,409 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" data-l="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>José Pablo Orozco · Software Engineer</title>
-<meta name="description" content="Software Engineer en Costa Rica. APIs, integraciones, IoT y despliegue en la nube con Python, Flask, FastAPI, Vue y AWS.">
-<meta property="og:title" content="José Pablo Orozco Salas · Software Engineer">
-<meta property="og:description" content="Software Engineer en Costa Rica. APIs, integraciones, IoT y despliegue en la nube con Python, Flask, FastAPI, Vue y AWS.">
+<title>José Pablo Orozco Salas, Software Engineer</title>
+<meta name="description" content="Software Engineer en Heredia, Costa Rica. Backend en Python, APIs, integraciones e IoT. Contribuidor de ClimMob.">
+<meta property="og:title" content="José Pablo Orozco Salas, Software Engineer">
+<meta property="og:description" content="Backend en Python, APIs, integraciones e IoT desde Heredia, Costa Rica. Disponible para roles remotos o híbridos.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ozco26.github.io/">
 <meta property="og:image" content="https://ozco26.github.io/img/marcasegura.jpg">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400;62..125,500;62..125,600;62..125,800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..700&family=Spline+Sans+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: hoja de datos técnica. Cada proyecto es una ficha con filas de especificación, como las fichas de producto que José redactaba en Legrand. */
+/* Mapa topográfico de campo: el relieve del hero es lo único llamativo; todo lo demás es sobrio. */
 :root {
-  --paper: #F3F5F2;
-  --sheet: #FFFFFF;
-  --ink: #15201C;
-  --muted: #5B6862;
-  --rule: #D5DCD8;
-  --signal: #2442C9;
-  --signal-soft: #E6EAFB;
-  --font-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
-  --font-body: "Archivo", "Helvetica Neue", Arial, sans-serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --mist: #E8EDEA; --paper: #F7F9F7; --basalt: #1E2C33; --lichen: #56685F;
+  --contour: #B9C9C2; --contour-major: #8FA79E; --canopy: #0D6E57; --canopy-soft: #D5E7DF;
+  --rule: #CCD7D2;
+  --sans: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --mono: "Spline Sans Mono", ui-monospace, Menlo, monospace;
+  color-scheme: light;
 }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --paper: #0E1412; --sheet: #151D1A; --ink: #E5EBE8; --muted: #93A19B;
-    --rule: #26312D; --signal: #93A6FF; --signal-soft: #1C2445; color-scheme: dark;
-  }
-}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --mist: #121C20; --paper: #18252A; --basalt: #E3EBE7; --lichen: #9DB0A8;
+  --contour: #2A3B40; --contour-major: #3E5559; --canopy: #5CC9A7; --canopy-soft: #173A33; --rule: #2A3A3F; color-scheme: dark; } }
 :root[data-theme="dark"] {
-  --paper: #0E1412; --sheet: #151D1A; --ink: #E5EBE8; --muted: #93A19B;
-  --rule: #26312D; --signal: #93A6FF; --signal-soft: #1C2445; color-scheme: dark;
-}
+  --mist: #121C20; --paper: #18252A; --basalt: #E3EBE7; --lichen: #9DB0A8;
+  --contour: #2A3B40; --contour-major: #3E5559; --canopy: #5CC9A7; --canopy-soft: #173A33; --rule: #2A3A3F; color-scheme: dark; }
+
+html[data-l="es"] :not(html)[lang="en"], html[data-l="en"] :not(html)[lang="es"] { display: none !important; }
 
 * { box-sizing: border-box; }
-body {
-  background: var(--paper);
-  color: var(--ink);
-  font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 1.6;
-  padding-left: max(16px, env(safe-area-inset-left, 0px));
-  padding-right: max(16px, env(safe-area-inset-right, 0px));
-  padding-block: 0;
-}
-.wrap { max-width: 1040px; margin: 0 auto; display: grid; gap: 72px; padding-block: 56px 72px; }
-a { color: var(--signal); text-underline-offset: 3px; }
-a:focus-visible, button:focus-visible { outline: 2px solid var(--signal); outline-offset: 3px; border-radius: 2px; }
-h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; margin: 0; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--mist); color: var(--basalt); font-family: var(--sans); font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+a { color: var(--canopy); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 2px solid var(--canopy); outline-offset: 3px; border-radius: 2px; }
+h1, h2, h3 { margin: 0; text-wrap: balance; }
 p { margin: 0; }
-.label {
-  font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em;
-  text-transform: uppercase; color: var(--muted);
-}
+.wrap { width: min(1120px, 100% - 2 * max(20px, env(safe-area-inset-left, 0px))); margin-inline: auto; }
 
-.shot { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; object-position: top; border-bottom: 1px solid var(--rule); background: var(--paper); }
-.feature .shot { aspect-ratio: 21 / 8; }
+/* Barra superior */
+.top { position: relative; z-index: 2; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-block: 20px; }
+.mark { font-weight: 800; font-size: 1rem; letter-spacing: -0.01em; color: var(--basalt); text-decoration: none; }
+.top nav { display: flex; gap: 22px; align-items: center; font-size: 15px; }
+.top nav a { color: var(--basalt); text-decoration: none; }
+.top nav a:hover { color: var(--canopy); }
+.lang { display: inline-flex; border: 1px solid var(--rule); border-radius: 999px; padding: 2px; background: var(--paper); }
+.lang button { font: inherit; font-size: 13px; font-weight: 600; border: 0; background: none; color: var(--lichen); padding: 4px 10px; border-radius: 999px; cursor: pointer; }
+.lang button[aria-pressed="true"] { background: var(--basalt); color: var(--paper); }
 
-/* Encabezado */
-header { display: grid; gap: 28px; }
-.id-line { display: flex; flex-wrap: wrap; gap: 8px 20px; align-items: baseline; }
-h1 {
-  font-size: clamp(2.6rem, 7vw, 4.8rem); line-height: 0.95;
-  font-weight: 800; font-stretch: 112%; letter-spacing: -0.02em;
+/* Hero con relieve */
+.hero { position: relative; overflow: hidden; min-height: min(86vh, 760px); display: grid; align-content: stretch; }
+.terrain { position: absolute; inset: 0; width: 100%; height: 100%; }
+.terrain .c { fill: none; stroke: var(--contour); stroke-width: 1.1; vector-effect: non-scaling-stroke; }
+.terrain .m { stroke: var(--contour-major); stroke-width: 1.6; }
+.pin circle.dot { fill: var(--canopy); }
+.pin circle.ring { fill: none; stroke: var(--canopy); stroke-width: 1.5; vector-effect: non-scaling-stroke; }
+@media (prefers-reduced-motion: no-preference) {
+  .terrain .c { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 2.4s cubic-bezier(.4,.1,.2,1) forwards; }
+  .terrain .c:nth-child(3n) { animation-delay: .25s; } .terrain .c:nth-child(3n+1) { animation-delay: .5s; }
+  .pin { opacity: 0; animation: appear .5s 2s ease-out forwards; }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  @keyframes appear { to { opacity: 1; } }
 }
-.role { font-size: clamp(1.1rem, 2.4vw, 1.4rem); font-weight: 500; max-width: 38ch; }
-.role strong { color: var(--signal); font-weight: 600; }
-.pitch { max-width: 62ch; color: var(--muted); }
-.contact { display: flex; flex-wrap: wrap; gap: 10px; }
-.chip {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-family: var(--font-mono); font-size: 13px;
-  border: 1px solid var(--rule); background: var(--sheet); color: var(--ink);
-  padding: 8px 12px; border-radius: 3px; text-decoration: none;
-}
-a.chip:hover { border-color: var(--signal); color: var(--signal); }
-.chip button {
-  font: inherit; font-size: 12px; background: none; border: 0; color: var(--signal);
-  cursor: pointer; padding: 0; text-decoration: underline; text-underline-offset: 3px;
-}
-.status {
-  display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 13px; color: var(--muted);
-}
-.status::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #1F9D61; }
+.hero-inner { position: relative; z-index: 1; display: grid; grid-template-rows: auto 1fr; }
+.intro { align-self: end; padding-block: 48px 72px; display: grid; gap: 26px; max-width: 760px; }
+h1 { font-size: clamp(3rem, 9vw, 7.2rem); line-height: .9; font-weight: 800; letter-spacing: -0.045em; }
+h1 span { display: block; color: var(--canopy); }
+.role { font-size: clamp(1.15rem, 2.2vw, 1.45rem); line-height: 1.4; max-width: 34ch; font-weight: 500; }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.btn { display: inline-flex; align-items: center; gap: 8px; font: inherit; font-size: 15px; font-weight: 600; padding: 11px 18px; border-radius: 999px; border: 1px solid var(--basalt); background: var(--basalt); color: var(--paper); text-decoration: none; cursor: pointer; }
+.btn:hover { background: var(--canopy); border-color: var(--canopy); text-decoration: none; }
+.btn.ghost { background: var(--paper); color: var(--basalt); border-color: var(--rule); }
+.btn.ghost:hover { border-color: var(--basalt); background: var(--paper); }
+.available { display: inline-flex; align-items: center; gap: 8px; font-size: 14.5px; color: var(--lichen); }
+.available::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: #1FA36F; box-shadow: 0 0 0 4px color-mix(in srgb, #1FA36F 22%, transparent); }
+.coords { position: absolute; z-index: 1; font-family: var(--mono); font-size: 12.5px; color: var(--lichen); line-height: 1.4; }
 
 /* Secciones */
-section { display: grid; gap: 24px; }
-.sec-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; border-bottom: 2px solid var(--ink); padding-bottom: 10px; flex-wrap: wrap; }
-h2 { font-size: 1.6rem; font-weight: 800; font-stretch: 108%; letter-spacing: -0.01em; }
+main section { padding-block: 88px 8px; }
+.sec-title { display: grid; grid-template-columns: minmax(0, 260px) minmax(0, 1fr); gap: 32px; align-items: baseline; margin-bottom: 40px; }
+h2 { font-size: clamp(1.9rem, 3.6vw, 2.6rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1; }
+.sec-title p { color: var(--lichen); max-width: 60ch; }
 
-/* Fichas de proyecto */
-.sheets { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
-.sheet {
-  background: var(--sheet); border: 1px solid var(--rule); border-radius: 4px;
-  display: grid; grid-template-rows: auto 1fr auto; min-width: 0;
+/* Proyecto destacado: ClimMob */
+.lead-project { background: var(--paper); border: 1px solid var(--rule); border-radius: 18px; padding: clamp(24px, 4vw, 44px); display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: clamp(24px, 4vw, 56px); }
+.lead-project h3 { font-size: clamp(2rem, 4.2vw, 3rem); font-weight: 800; letter-spacing: -0.035em; line-height: 1; }
+.where { color: var(--lichen); font-size: 15px; margin-top: 8px; }
+.lead-project .desc { margin-top: 18px; max-width: 58ch; }
+.did { margin: 20px 0 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+.did li { padding-left: 22px; position: relative; max-width: 60ch; }
+.did li::before { content: ""; position: absolute; left: 0; top: .62em; width: 10px; height: 2px; background: var(--canopy); }
+.links { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 18px; font-size: 15px; font-weight: 600; }
+.activity { display: grid; gap: 14px; align-content: start; }
+.big { font-size: clamp(3.4rem, 7vw, 5rem); font-weight: 800; letter-spacing: -0.05em; line-height: .9; }
+.big small { display: block; font-size: 1rem; font-weight: 500; letter-spacing: 0; color: var(--lichen); margin-top: 8px; line-height: 1.4; }
+.bars { display: grid; grid-template-columns: repeat(14, minmax(0, 1fr)); gap: 5px; align-items: end; height: 150px; border-bottom: 1px solid var(--basalt); padding-top: 8px; }
+.bars span { background: var(--canopy); border-radius: 3px 3px 0 0; min-height: 3px; }
+.bars span:hover { background: var(--basalt); }
+.axis { display: flex; justify-content: space-between; font-family: var(--mono); font-size: 12px; color: var(--lichen); }
+.stack-line { font-size: 15px; color: var(--lichen); border-top: 1px solid var(--rule); padding-top: 14px; }
+.stack-line b { color: var(--basalt); font-weight: 600; }
+
+/* MarcaSegura */
+.project { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: clamp(24px, 4vw, 56px); padding-block: 56px; border-bottom: 1px solid var(--rule); align-items: start; }
+.project.flip { grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); }
+.project.flip .shot-wrap { order: 2; }
+.shot-wrap { border-radius: 14px; overflow: hidden; border: 1px solid var(--rule); background: var(--paper); }
+.shot-wrap img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; }
+.project h3 { font-size: clamp(1.6rem, 3vw, 2.1rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.05; }
+.project .desc { margin-top: 14px; max-width: 56ch; }
+.pipeline { margin-top: 22px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); counter-reset: s; }
+.pipeline div { padding: 10px 12px 10px 0; border-top: 2px solid var(--rule); font-size: 14px; display: grid; gap: 2px; }
+.pipeline div b { font-weight: 600; }
+.pipeline div span { color: var(--lichen); font-size: 13px; }
+.pipeline div:last-child { border-top-color: var(--canopy); }
+.pipeline div:last-child b { color: var(--canopy); }
+.tech { margin-top: 18px; font-size: 15px; color: var(--lichen); }
+
+/* Otros proyectos */
+.more { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; padding-top: 56px; }
+.more article { display: grid; gap: 10px; align-content: start; }
+.more img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; object-position: top; border-radius: 12px; border: 1px solid var(--rule); background: var(--paper); }
+.more .noimg { aspect-ratio: 4 / 3; border-radius: 12px; border: 1px solid var(--rule); background: var(--paper); display: grid; place-content: center; padding: 20px; text-align: center; color: var(--lichen); font-size: 14px; }
+.more h3 { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.02em; margin-top: 6px; }
+.more p { font-size: 15.5px; }
+.more .tech { margin-top: 0; font-size: 14px; }
+
+/* Trayectoria: sí es una secuencia */
+.path { display: grid; }
+.step { display: grid; grid-template-columns: 150px 22px minmax(0, 1fr); gap: 0 18px; }
+.step .yr { font-family: var(--mono); font-size: 13.5px; color: var(--lichen); padding-top: 3px; text-align: right; font-variant-numeric: tabular-nums; }
+.step .line { position: relative; }
+.step .line::before { content: ""; position: absolute; left: 10px; top: 0; bottom: 0; width: 1px; background: var(--rule); }
+.step .line::after { content: ""; position: absolute; left: 5px; top: 8px; width: 11px; height: 11px; border-radius: 50%; background: var(--mist); border: 2px solid var(--lichen); }
+.step.now .line::after { background: var(--canopy); border-color: var(--canopy); }
+.step .what { padding-bottom: 34px; }
+.step h3 { font-size: 1.15rem; font-weight: 700; letter-spacing: -0.01em; }
+.step h3 .co { display: block; font-weight: 500; font-size: 15px; color: var(--canopy); }
+.step p { margin-top: 4px; color: var(--lichen); max-width: 66ch; font-size: 16px; }
+
+/* Herramientas y formación */
+.two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; }
+.tools { display: grid; gap: 22px; }
+.tools div { border-top: 1px solid var(--rule); padding-top: 14px; }
+.tools h3, .edu h3 { font-size: 1rem; font-weight: 700; margin-bottom: 6px; }
+.tools p { color: var(--lichen); }
+.edu { display: grid; gap: 22px; }
+.edu div { border-top: 1px solid var(--rule); padding-top: 14px; }
+.edu p { color: var(--lichen); }
+
+/* Cierre */
+.closing { margin-top: 96px; background: var(--basalt); color: var(--mist); }
+.closing .wrap { padding-block: 72px; display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 40px; align-items: end; }
+.closing h2 { color: var(--mist); font-size: clamp(2rem, 4.5vw, 3.2rem); }
+.closing .contact { display: grid; gap: 10px; font-size: 16px; }
+.closing a { color: var(--mist); }
+.closing .btn { background: var(--mist); color: var(--basalt); border-color: var(--mist); justify-self: start; }
+.closing .btn:hover { background: var(--canopy-soft); border-color: var(--canopy-soft); }
+.closing small { color: color-mix(in srgb, var(--mist) 65%, transparent); font-size: 13.5px; }
+:root[data-theme="dark"] .closing, :root:not([data-theme="light"]) .closing { }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .closing { background: #0B1316; color: var(--basalt); } :root:not([data-theme="light"]) .closing h2, :root:not([data-theme="light"]) .closing a { color: var(--basalt); } :root:not([data-theme="light"]) .closing .btn { background: var(--canopy); border-color: var(--canopy); color: #0B1316; } }
+
+@media (max-width: 860px) {
+  .lead-project, .project, .project.flip, .closing .wrap, .two, .sec-title { grid-template-columns: 1fr; }
+  .project.flip .shot-wrap { order: 0; }
+  .more { grid-template-columns: 1fr; }
+  .top nav .nav-link { display: none; }
+  .step { grid-template-columns: 76px 22px minmax(0, 1fr); gap: 0 12px; }
+  .coords { display: none; }
+  .terrain { opacity: .55; }
+  .hero { min-height: auto; }
+  .intro { padding-block: 120px 56px; }
 }
-.sheet.feature { grid-column: 1 / -1; }
-.sheet-top { display: flex; justify-content: space-between; gap: 12px; padding: 14px 20px; border-bottom: 1px solid var(--rule); flex-wrap: wrap; }
-.sheet-body { padding: 20px; display: grid; gap: 16px; align-content: start; min-width: 0; }
-.sheet h3 { font-size: 1.5rem; font-weight: 800; font-stretch: 104%; letter-spacing: -0.01em; }
-.feature h3 { font-size: clamp(1.7rem, 4vw, 2.3rem); }
-.sheet .lede { max-width: 62ch; }
-.tag { font-family: var(--font-mono); font-size: 12px; padding: 2px 8px; border-radius: 2px; background: var(--signal-soft); color: var(--signal); }
-.specs { display: grid; grid-template-columns: minmax(96px, auto) 1fr; border-top: 1px solid var(--rule); }
-.specs dt, .specs dd { margin: 0; padding: 9px 0; border-bottom: 1px solid var(--rule); font-size: 14.5px; }
-.specs dt { font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); padding-right: 16px; padding-top: 11px; }
-.highlights { margin: 0; padding-left: 18px; display: grid; gap: 6px; font-size: 15px; }
-.sheet-foot { padding: 12px 20px; border-top: 1px solid var(--rule); display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-size: 14px; }
-.sheet-foot .label { align-self: center; }
-
-.feature-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 28px; }
-
-/* Pipeline de despliegue */
-.pipeline { display: grid; gap: 10px; align-content: start; }
-.flow { display: flex; flex-wrap: wrap; align-items: stretch; gap: 0; }
-.step {
-  flex: 1 1 110px; border: 1px solid var(--rule); padding: 10px 12px; display: grid; gap: 2px;
-  background: var(--paper); margin-left: -1px; margin-top: -1px; min-width: 0;
-}
-.step b { font-size: 14px; font-weight: 600; }
-.step span { font-family: var(--font-mono); font-size: 11.5px; color: var(--muted); }
-.step.end { background: var(--signal-soft); border-color: var(--signal); position: relative; z-index: 1; }
-.step.end b { color: var(--signal); }
-
-/* Experiencia */
-.timeline { display: grid; gap: 0; }
-.job { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 20px; padding: 16px 0; border-bottom: 1px solid var(--rule); }
-.job .when { font-family: var(--font-mono); font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; padding-top: 2px; }
-.job h3 { font-size: 1.1rem; font-weight: 600; font-stretch: 100%; }
-.job h3 span { font-weight: 400; color: var(--muted); }
-.job p { color: var(--muted); font-size: 15px; max-width: 70ch; margin-top: 4px; }
-.job.earlier h3 { font-size: 1rem; }
-
-/* Stack */
-.stack { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
-.stack div { display: grid; gap: 8px; align-content: start; }
-.stack ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
-.stack li { font-family: var(--font-mono); font-size: 13px; border: 1px solid var(--rule); padding: 3px 8px; border-radius: 2px; background: var(--sheet); }
-
-.edu { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
-.edu div { border-top: 1px solid var(--rule); padding-top: 12px; display: grid; gap: 4px; align-content: start; }
-.edu b { font-weight: 600; }
-.edu span { color: var(--muted); font-size: 14.5px; }
-
-footer { border-top: 2px solid var(--ink); padding-top: 20px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; align-items: center; }
-footer p { font-family: var(--font-display); font-weight: 600; font-size: 1.2rem; max-width: 40ch; }
-
-@media (max-width: 760px) {
-  .sheets, .feature-grid, .stack, .edu { grid-template-columns: 1fr; }
-  .job { grid-template-columns: 1fr; gap: 4px; }
-  .wrap { gap: 56px; padding-block: 36px 56px; }
-}
-@media (prefers-reduced-motion: no-preference) {
-  .sheet { transition: border-color 160ms ease; }
-  .sheet:hover { border-color: var(--muted); }
-}
+@media (max-width: 520px) { .pipeline { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 </style>
 </head>
 <body>
 
-<div class="wrap">
-  <header>
-    <div class="id-line">
-      <span class="label">Heredia, Costa Rica · UTC-6</span>
-      <span class="status">Disponible para roles remotos o híbridos</span>
+<header class="hero">
+  <svg class="terrain" viewBox="0 0 1600 720" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+    <g>
+<path class="c" pathLength="1" d="M1546,0 L1550,3 L1552,5 L1555,7 L1558,10 L1560,12 L1564,15 L1565,16 L1569,20 L1570,21 L1574,25 L1575,26 L1579,30 L1580,31 L1584,35 L1585,37 L1588,40 L1590,42 L1593,45 L1595,48 L1597,50 L1600,54"/>
+<path class="c" pathLength="1" d="M131,720 L125,717 L120,714 L113,710 L105,705 L100,701 L95,698 L90,694 L85,689 L80,684 L75,679 L70,672 L66,665 L64,660 L61,650 L60,644 L60,634 L61,629 L64,619 L67,614 L70,608 L75,601 L80,596 L85,591 L90,586 L95,582 L100,578 L107,574 L115,569 L120,566 L125,563 L133,559 L140,555 L145,553 L155,549 L161,546 L167,544 L176,541 L181,539 L191,535 L196,534 L206,530 L212,529 L221,526 L229,524 L236,522 L246,519 L251,518 L261,516 L270,514 L276,512 L286,510 L293,509 L301,507 L311,505 L317,503 L326,502 L336,500 L343,498 L351,497 L361,495 L368,493 L376,492 L386,490 L392,488 L401,486 L411,484 L416,482 L426,480 L432,478 L441,475 L448,473 L456,470 L462,468 L471,464 L476,462 L486,458 L492,455 L497,453 L505,448 L512,444 L517,441 L522,437 L528,433 L534,428 L541,423 L547,418 L552,413 L557,409 L562,404 L567,399 L572,394 L577,388 L582,383 L586,378 L591,373 L595,368 L599,363 L603,357 L607,352 L612,346 L617,339 L621,332 L625,327 L628,322 L632,316 L637,307 L640,302 L643,297 L647,289 L650,282 L653,277 L657,268 L660,262 L662,256 L666,247 L668,242 L672,232 L673,227 L677,217 L679,211 L682,204 L686,196 L688,191 L692,185 L697,177 L702,171 L707,166 L712,161 L717,157 L722,153 L727,150 L733,146 L740,141 L747,136 L752,132 L757,128 L762,122 L767,116 L770,111 L772,101 L773,96 L772,89 L771,81 L770,70 L770,60 L771,50 L773,45 L777,37 L782,30 L786,25 L791,20 L796,15 L802,10 L808,6 L813,2"/>
+<path class="c" pathLength="1" d="M1484,0 L1490,4 L1495,8 L1500,11 L1505,15 L1511,20 L1517,25 L1523,30 L1529,35 L1534,40 L1539,45 L1544,50 L1548,55 L1553,60 L1557,65 L1561,70 L1565,76 L1570,82 L1575,89 L1579,96 L1583,101 L1586,106 L1590,113 L1594,121 L1597,126 L1600,132"/>
+<path class="c" pathLength="1" d="M334,720 L326,718 L316,715 L311,714 L301,711 L296,709 L286,706 L281,704 L271,700 L266,697 L260,695 L251,690 L246,687 L241,684 L235,680 L229,675 L223,670 L219,665 L216,660 L211,650 L210,644 L210,634 L211,629 L216,620 L220,614 L224,609 L230,604 L236,599 L241,596 L246,593 L252,589 L261,584 L266,582 L272,579 L281,575 L286,573 L296,569 L301,568 L311,564 L316,563 L326,560 L331,558 L341,555 L347,554 L356,552 L366,549 L371,548 L381,545 L387,544 L396,542 L406,539 L411,538 L421,535 L428,534 L436,531 L446,529 L451,527 L461,524 L466,523 L476,519 L482,518 L492,514 L497,512 L504,509 L512,505 L517,503 L525,498 L532,495 L537,492 L543,488 L550,483 L557,479 L562,475 L567,471 L572,467 L577,463 L582,458 L587,453 L593,448 L598,443 L603,438 L607,433 L612,428 L617,423 L622,417 L627,411 L632,405 L637,399 L642,393 L647,388 L651,383 L654,378 L658,373 L662,368 L667,361 L672,354 L677,347 L680,342 L684,337 L687,332 L692,324 L697,317 L700,312 L703,307 L707,301 L712,293 L716,287 L719,282 L722,276 L727,268 L731,262 L734,257 L737,250 L742,242 L744,237 L747,228 L750,222 L752,214 L755,206 L757,200 L761,191 L764,186 L767,180 L772,173 L777,166 L781,161 L785,156 L789,151 L793,146 L797,139 L803,132 L806,126 L809,121 L813,112 L814,106 L816,96 L818,88 L818,81 L820,70 L823,61 L825,55 L828,50 L833,43 L838,37 L843,32 L848,27 L853,23 L858,19 L864,15 L872,10 L878,7 L883,4 L890,0"/>
+<path class="c" pathLength="1" d="M1438,0 L1445,3 L1450,6 L1456,10 L1464,15 L1470,19 L1475,22 L1480,26 L1485,30 L1492,35 L1498,40 L1503,45 L1509,50 L1514,55 L1519,60 L1523,65 L1528,70 L1532,76 L1536,81 L1540,86 L1545,92 L1550,99 L1554,106 L1557,111 L1560,116 L1565,124 L1568,131 L1571,136 L1575,145 L1578,151 L1580,157 L1583,166 L1585,171 L1588,181 L1590,188 L1592,196 L1595,206 L1596,211 L1598,222 L1599,232"/>
+<path class="c" pathLength="1" d="M1600,679 L1599,680 L1595,683 L1592,685 L1590,686 L1585,689 L1584,690 L1580,692 L1576,695 L1575,695 L1570,698 L1566,700 L1565,701 L1560,703 L1556,705 L1555,705 L1550,707 L1545,709 L1543,710 L1540,711 L1535,713 L1530,715 L1529,715 L1525,716 L1520,718 L1515,719 L1512,720"/>
+<path class="c" pathLength="1" d="M765,720 L757,720 L747,719 L737,718 L727,717 L717,716 L707,715 L702,715 L692,714 L682,713 L672,712 L662,711 L654,710 L647,709 L637,708 L627,707 L617,706 L607,706 L599,705 L592,704 L582,704 L572,703 L562,702 L552,701 L542,700 L537,700 L527,699 L517,698 L507,697 L497,696 L490,695 L482,694 L471,692 L461,690 L456,690 L446,688 L436,685 L431,684 L421,682 L415,680 L406,677 L400,675 L391,671 L386,669 L379,665 L372,660 L366,655 L362,650 L360,644 L359,634 L361,629 L366,622 L371,617 L376,613 L382,609 L391,604 L396,601 L401,599 L411,595 L416,593 L425,589 L431,587 L439,584 L446,581 L453,579 L461,576 L467,574 L476,570 L482,569 L492,565 L497,563 L505,559 L512,556 L517,554 L527,549 L532,547 L537,544 L546,539 L552,535 L557,532 L562,529 L569,524 L575,519 L582,514 L587,509 L592,505 L597,500 L602,495 L607,490 L612,485 L617,480 L622,475 L627,469 L632,463 L636,458 L641,453 L645,448 L649,443 L653,438 L658,433 L662,428 L667,421 L672,415 L677,409 L682,403 L686,398 L690,393 L694,388 L698,383 L702,377 L707,371 L712,365 L717,359 L722,353 L727,347 L731,342 L736,337 L740,332 L745,327 L751,322 L756,317 L761,312 L766,307 L771,302 L776,297 L780,292 L784,287 L787,281 L792,272 L794,267 L796,257 L798,252 L799,242 L800,232 L801,222 L801,211 L802,201 L803,196 L804,186 L807,176 L809,171 L813,164 L816,156 L819,151 L823,145 L828,136 L830,131 L833,126 L837,116 L839,111 L843,101 L844,96 L847,86 L849,81 L853,71 L855,65 L858,60 L863,54 L868,48 L873,43 L878,39 L883,35 L890,30 L898,25 L903,22 L908,19 L916,15 L923,12 L928,10 L938,6 L943,4 L953,0"/>
+<path class="c" pathLength="1" d="M1077,720 L1068,719 L1058,717 L1048,715 L1043,715 L1033,714 L1023,713 L1013,712 L1003,712 L993,712 L983,712 L973,712 L963,713 L953,714 L943,715 L938,715 L928,716 L918,717 L908,718 L898,719 L888,720 L881,720"/>
+<path class="c m" pathLength="1" d="M1395,0 L1404,4 L1409,6 L1419,10 L1424,12 L1430,15 L1439,20 L1445,23 L1450,27 L1455,30 L1462,35 L1469,40 L1475,45 L1480,49 L1485,53 L1490,58 L1495,63 L1500,68 L1505,73 L1510,79 L1515,85 L1519,91 L1523,96 L1527,101 L1530,106 L1535,113 L1539,121 L1542,126 L1545,131 L1550,141 L1552,146 L1555,153 L1558,161 L1560,166 L1563,176 L1565,182 L1567,191 L1569,201 L1570,206 L1572,217 L1574,227 L1575,236 L1576,242 L1577,252 L1578,262 L1578,272 L1579,282 L1580,292 L1580,297 L1581,307 L1583,317 L1584,327 L1585,332 L1587,342 L1589,352 L1590,357 L1593,368 L1595,374 L1598,383 L1600,389"/>
+<path class="c m" pathLength="1" d="M1600,642 L1595,647 L1590,651 L1585,656 L1580,660 L1573,665 L1566,670 L1560,673 L1555,676 L1548,680 L1540,683 L1535,686 L1525,690 L1520,691 L1510,695 L1505,696 L1495,699 L1488,700 L1480,702 L1470,703 L1460,704 L1453,705 L1445,705 L1434,706 L1424,706 L1414,706 L1404,705 L1398,705 L1389,704 L1379,703 L1369,702 L1359,701 L1353,700 L1344,699 L1334,697 L1324,695 L1319,695 L1309,693 L1299,692 L1289,690 L1284,689 L1274,688 L1264,687 L1254,687 L1244,686 L1234,686 L1224,686 L1214,686 L1204,686 L1194,687 L1184,688 L1174,688 L1164,689 L1154,689 L1144,689 L1134,689 L1124,689 L1113,688 L1103,688 L1093,687 L1083,686 L1073,686 L1063,685 L1053,685 L1048,685 L1038,684 L1028,684 L1018,684 L1008,685 L1003,685 L993,686 L983,686 L973,687 L963,688 L953,689 L948,690 L938,691 L928,692 L918,693 L908,694 L900,695 L893,695 L883,696 L873,697 L863,697 L853,698 L843,698 L833,698 L823,698 L813,697 L803,697 L792,696 L782,695 L775,695 L767,694 L757,693 L747,692 L737,690 L732,690 L722,688 L712,686 L705,685 L697,683 L687,681 L681,680 L672,678 L662,675 L657,674 L647,672 L640,670 L632,667 L622,665 L617,663 L607,660 L602,658 L592,655 L587,653 L579,650 L572,646 L567,643 L562,639 L557,634 L552,624 L553,614 L557,606 L561,599 L565,594 L569,589 L574,584 L579,579 L583,574 L588,569 L592,564 L597,559 L602,553 L607,548 L612,542 L617,536 L622,530 L627,524 L631,519 L635,514 L639,509 L643,503 L647,498 L652,491 L657,485 L662,478 L666,473 L670,468 L674,463 L677,458 L682,452 L687,446 L692,439 L697,433 L701,428 L705,423 L709,418 L713,413 L717,408 L722,402 L727,396 L732,391 L737,385 L742,380 L747,374 L752,369 L757,364 L762,360 L767,355 L772,350 L777,346 L782,341 L787,336 L792,330 L797,324 L802,317 L805,312 L808,307 L813,299 L815,292 L818,285 L820,277 L822,267 L823,262 L824,252 L825,242 L825,232 L826,222 L826,211 L827,201 L828,193 L829,186 L831,176 L833,171 L836,161 L839,156 L843,148 L846,141 L849,136 L853,128 L856,121 L859,116 L863,107 L865,101 L868,95 L872,86 L874,81 L878,75 L883,67 L888,61 L893,56 L898,51 L903,47 L908,44 L913,40 L921,35 L928,32 L933,29 L941,25 L948,22 L953,20 L963,16 L968,15 L978,11 L983,10 L993,7 L1001,5 L1008,3 L1018,1"/>
+<path class="c" pathLength="1" d="M1338,0 L1344,1 L1354,3 L1364,5 L1369,6 L1379,9 L1384,11 L1394,15 L1399,17 L1408,20 L1414,23 L1419,26 L1428,30 L1434,34 L1439,37 L1445,41 L1451,45 L1458,50 L1464,55 L1470,60 L1475,65 L1480,70 L1485,75 L1490,80 L1495,86 L1499,91 L1503,96 L1507,101 L1510,106 L1515,112 L1520,120 L1523,126 L1526,131 L1530,139 L1533,146 L1535,151 L1539,161 L1541,166 L1544,176 L1545,181 L1548,191 L1550,200 L1551,206 L1553,217 L1554,227 L1555,237 L1555,242 L1556,252 L1556,262 L1557,272 L1557,282 L1557,292 L1558,302 L1558,312 L1559,322 L1560,332 L1561,337 L1562,347 L1564,357 L1565,363 L1567,373 L1570,381 L1572,388 L1575,397 L1577,403 L1580,411 L1583,418 L1585,424 L1589,433 L1591,438 L1595,448 L1597,453 L1600,463"/>
+<path class="c" pathLength="1" d="M1600,597 L1596,604 L1592,609 L1589,614 L1585,619 L1580,625 L1575,630 L1570,635 L1565,640 L1559,644 L1552,650 L1545,654 L1540,657 L1535,660 L1525,664 L1520,667 L1512,670 L1505,672 L1496,675 L1490,677 L1480,679 L1475,680 L1465,681 L1455,683 L1445,683 L1434,684 L1424,684 L1414,684 L1404,683 L1394,682 L1384,681 L1374,680 L1369,679 L1359,678 L1349,676 L1344,675 L1334,673 L1324,670 L1319,669 L1309,667 L1299,665 L1294,664 L1284,661 L1275,660 L1269,658 L1259,656 L1249,655 L1244,654 L1234,653 L1224,652 L1214,651 L1204,651 L1194,650 L1184,650 L1174,651 L1164,651 L1154,652 L1144,652 L1134,653 L1124,653 L1113,654 L1103,654 L1098,655 L1088,655 L1078,656 L1068,656 L1058,657 L1048,657 L1038,658 L1028,659 L1019,660 L1013,660 L1003,661 L993,662 L983,663 L973,664 L968,665 L958,666 L948,668 L938,669 L933,670 L923,671 L913,672 L903,673 L893,674 L883,675 L878,675 L868,675 L858,676 L848,676 L838,676 L828,675 L819,675 L813,674 L803,673 L792,672 L782,671 L773,670 L767,669 L757,667 L747,665 L742,664 L732,661 L727,660 L717,657 L711,655 L702,651 L697,649 L688,644 L682,642 L677,639 L671,634 L664,629 L659,624 L654,619 L651,614 L647,606 L645,599 L645,589 L646,579 L647,574 L650,564 L652,559 L657,549 L659,544 L662,537 L667,529 L669,524 L672,519 L677,511 L681,503 L685,498 L688,493 L692,487 L697,480 L702,473 L705,468 L709,463 L712,458 L717,452 L722,445 L727,439 L732,433 L736,428 L741,423 L745,418 L749,413 L754,408 L759,403 L764,398 L769,393 L774,388 L779,383 L784,378 L789,373 L794,368 L798,363 L803,357 L808,351 L813,345 L817,337 L820,332 L823,327 L828,318 L830,312 L833,305 L835,297 L838,288 L839,282 L841,272 L842,262 L843,257 L844,247 L844,237 L845,227 L845,217 L846,206 L846,196 L848,188 L849,181 L852,171 L853,166 L858,156 L860,151 L863,145 L867,136 L870,131 L873,126 L878,116 L880,111 L883,106 L888,96 L891,91 L894,86 L898,80 L903,74 L908,68 L913,64 L918,59 L923,55 L931,50 L938,46 L943,43 L949,40 L958,36 L963,34 L972,30 L978,28 L987,25 L993,23 L1003,20 L1008,19 L1018,17 L1025,15 L1033,13 L1043,11 L1052,10 L1058,9 L1068,8 L1078,6 L1088,5 L1093,5 L1103,4 L1113,3 L1124,2 L1134,2 L1144,1 L1154,0 L1160,0"/>
+<path class="c" pathLength="1" d="M1214,10 L1224,9 L1234,9 L1244,8 L1254,8 L1264,8 L1274,8 L1284,8 L1294,8 L1304,8 L1314,9 L1324,10 L1329,11 L1339,12 L1349,14 L1354,15 L1364,18 L1373,20 L1379,22 L1388,25 L1394,28 L1400,30 L1409,35 L1414,37 L1420,40 L1428,45 L1434,49 L1439,53 L1445,56 L1450,60 L1456,65 L1461,70 L1467,76 L1472,81 L1477,86 L1481,91 L1485,96 L1490,101 L1495,108 L1500,115 L1503,121 L1506,126 L1510,132 L1514,141 L1517,146 L1520,153 L1523,161 L1525,167 L1528,176 L1530,184 L1532,191 L1534,201 L1535,209 L1536,217 L1537,227 L1537,237 L1538,247 L1538,257 L1538,267 L1538,277 L1538,287 L1537,297 L1537,307 L1537,317 L1538,327 L1538,337 L1539,347 L1540,352 L1541,363 L1543,373 L1545,379 L1547,388 L1550,397 L1552,403 L1555,412 L1557,418 L1560,426 L1563,433 L1565,439 L1569,448 L1570,453 L1574,463 L1576,468 L1579,478 L1581,483 L1584,493 L1585,500 L1587,509 L1588,519 L1589,529 L1589,539 L1588,549 L1586,559 L1585,564 L1582,574 L1580,579 L1575,589 L1572,594 L1569,599 L1565,604 L1560,610 L1555,616 L1550,621 L1545,625 L1539,629 L1532,634 L1525,639 L1520,642 L1514,644 L1505,649 L1500,651 L1490,654 L1485,656 L1475,658 L1467,660 L1460,661 L1450,662 L1439,663 L1429,663 L1419,663 L1409,663 L1399,662 L1389,661 L1379,660 L1374,659 L1364,657 L1354,655 L1349,654 L1339,651 L1331,650 L1324,648 L1314,645 L1309,644 L1299,641 L1293,639 L1284,637 L1274,635 L1269,634 L1259,631 L1249,629 L1244,629 L1234,627 L1224,626 L1214,625 L1209,624 L1199,624 L1189,623 L1179,623 L1169,623 L1159,623 L1149,624 L1142,624 L1134,625 L1124,626 L1113,627 L1103,628 L1093,629 L1087,629 L1078,630 L1068,631 L1058,632 L1048,634 L1041,634 L1033,635 L1023,637 L1013,638 L1003,639 L998,640 L988,641 L978,643 L968,644 L963,645 L953,646 L943,648 L933,649 L928,650 L918,651 L908,652 L898,653 L888,653 L878,654 L868,654 L858,654 L848,654 L838,654 L828,653 L818,652 L808,650 L801,650 L792,648 L782,646 L776,644 L767,642 L759,639 L752,637 L746,634 L737,631 L732,628 L726,624 L719,619 L713,614 L708,609 L704,604 L701,599 L697,591 L695,584 L694,574 L694,564 L696,554 L697,548 L700,539 L702,532 L706,524 L708,519 L712,510 L716,503 L718,498 L722,492 L727,484 L731,478 L734,473 L738,468 L742,462 L747,455 L752,449 L757,443 L761,438 L766,433 L770,428 L774,423 L779,418 L784,413 L788,408 L793,403 L798,398 L803,392 L808,386 L813,380 L818,374 L822,368 L825,363 L829,357 L833,351 L837,342 L839,337 L843,330 L846,322 L848,317 L851,307 L853,300 L854,292 L856,282 L858,274 L859,267 L860,257 L861,247 L861,237 L862,227 L862,217 L863,206 L863,201 L864,191 L866,181 L868,176 L871,166 L873,161 L877,151 L880,146 L883,140 L887,131 L890,126 L893,121 L898,112 L902,106 L905,101 L908,96 L913,89 L918,83 L923,78 L928,73 L933,69 L938,65 L945,60 L953,55 L958,53 L963,50 L973,46 L978,43 L986,40 L993,38 L1002,35 L1008,33 L1018,31 L1023,29 L1033,27 L1043,25 L1048,24 L1058,22 L1068,21 L1074,20 L1083,19 L1093,18 L1103,17 L1113,16 L1124,15 L1129,15 L1139,14 L1149,14 L1159,13 L1169,12 L1179,12 L1189,11 L1199,11 L1209,10 L1214,10"/>
+<path class="c" pathLength="1" d="M1229,20 L1239,20 L1249,19 L1259,19 L1269,18 L1279,18 L1289,18 L1299,19 L1309,19 L1318,20 L1324,21 L1334,22 L1344,24 L1350,25 L1359,27 L1369,30 L1374,32 L1384,35 L1389,38 L1395,40 L1404,45 L1409,47 L1415,50 L1423,55 L1429,60 L1434,63 L1439,67 L1445,71 L1450,76 L1455,81 L1460,86 L1465,91 L1470,96 L1475,102 L1480,108 L1485,115 L1488,121 L1491,126 L1495,131 L1500,141 L1502,146 L1505,152 L1508,161 L1510,166 L1513,176 L1515,181 L1517,191 L1519,201 L1520,207 L1521,217 L1522,227 L1522,237 L1522,247 L1522,257 L1522,267 L1521,277 L1520,287 L1520,297 L1519,302 L1519,312 L1519,322 L1518,332 L1518,342 L1519,352 L1520,362 L1520,368 L1522,378 L1524,388 L1525,393 L1528,403 L1530,409 L1533,418 L1535,424 L1538,433 L1540,438 L1544,448 L1545,453 L1549,463 L1551,468 L1554,478 L1556,483 L1558,493 L1560,500 L1561,509 L1563,519 L1563,529 L1563,539 L1561,549 L1560,556 L1558,564 L1555,571 L1551,579 L1548,584 L1545,589 L1540,596 L1535,601 L1530,606 L1525,611 L1520,614 L1513,619 L1505,624 L1500,627 L1493,629 L1485,633 L1480,635 L1470,637 L1460,639 L1455,640 L1445,642 L1434,643 L1424,643 L1414,643 L1404,642 L1394,641 L1384,640 L1379,639 L1369,637 L1359,635 L1354,634 L1344,632 L1335,629 L1329,628 L1319,625 L1314,624 L1304,621 L1298,619 L1289,617 L1279,614 L1274,613 L1264,611 L1256,609 L1249,608 L1239,606 L1229,605 L1224,604 L1214,603 L1204,602 L1194,601 L1184,601 L1174,601 L1164,601 L1154,601 L1144,602 L1134,603 L1124,603 L1115,604 L1108,605 L1098,606 L1088,607 L1078,608 L1071,609 L1063,610 L1053,612 L1043,613 L1034,614 L1028,615 L1018,616 L1008,618 L999,619 L993,620 L983,622 L973,623 L965,624 L958,625 L948,627 L938,628 L928,629 L923,630 L913,631 L903,632 L893,632 L883,633 L873,633 L863,632 L853,632 L843,631 L833,630 L828,629 L818,627 L808,625 L803,624 L792,621 L787,619 L777,615 L772,612 L767,609 L760,604 L753,599 L748,594 L744,589 L741,584 L737,575 L736,569 L734,559 L734,549 L736,539 L737,533 L740,524 L742,518 L746,509 L749,503 L752,496 L757,488 L760,483 L763,478 L767,472 L772,465 L777,458 L781,453 L785,448 L789,443 L793,438 L797,433 L803,427 L808,421 L813,415 L818,408 L822,403 L825,398 L829,393 L833,388 L838,380 L842,373 L845,368 L848,362 L852,352 L854,347 L858,339 L860,332 L863,325 L865,317 L868,307 L869,302 L871,292 L873,282 L873,277 L875,267 L876,257 L876,247 L877,237 L878,227 L878,222 L879,211 L880,201 L881,191 L883,182 L884,176 L888,166 L889,161 L893,153 L896,146 L899,141 L903,134 L907,126 L910,121 L913,116 L918,109 L923,102 L928,96 L932,91 L937,86 L943,81 L948,76 L953,73 L958,69 L964,65 L973,61 L978,58 L985,55 L993,52 L998,50 L1008,47 L1013,45 L1023,42 L1031,40 L1038,39 L1048,37 L1056,35 L1063,34 L1073,32 L1083,31 L1090,30 L1098,29 L1108,28 L1118,27 L1129,27 L1139,26 L1149,25 L1154,25 L1164,24 L1174,24 L1184,23 L1194,22 L1204,22 L1214,21 L1224,20 L1229,20"/>
+<path class="c m" pathLength="1" d="M1234,30 L1244,29 L1254,29 L1264,28 L1274,28 L1284,28 L1294,28 L1304,29 L1314,30 L1320,30 L1329,31 L1339,33 L1349,35 L1354,36 L1364,39 L1369,41 L1379,44 L1384,47 L1393,50 L1399,54 L1404,56 L1411,60 L1419,65 L1424,69 L1429,73 L1434,77 L1439,81 L1445,86 L1450,91 L1455,96 L1460,101 L1465,107 L1470,114 L1474,121 L1478,126 L1481,131 L1485,138 L1489,146 L1491,151 L1495,159 L1497,166 L1500,174 L1502,181 L1504,191 L1505,196 L1507,206 L1508,217 L1508,227 L1508,237 L1508,247 L1508,257 L1507,267 L1506,277 L1505,287 L1504,292 L1503,302 L1502,312 L1501,322 L1500,332 L1500,342 L1500,347 L1500,357 L1500,363 L1500,373 L1502,383 L1503,393 L1505,400 L1506,408 L1509,418 L1511,423 L1514,433 L1516,438 L1519,448 L1521,453 L1524,463 L1526,468 L1529,478 L1531,483 L1533,493 L1535,502 L1536,509 L1537,519 L1537,529 L1536,539 L1535,546 L1533,554 L1530,562 L1526,569 L1523,574 L1520,579 L1515,585 L1510,590 L1505,595 L1499,599 L1491,604 L1485,608 L1480,610 L1470,614 L1465,616 L1455,618 L1449,619 L1439,621 L1429,622 L1419,622 L1409,622 L1399,621 L1389,620 L1382,619 L1374,618 L1364,616 L1356,614 L1349,613 L1339,610 L1334,609 L1324,606 L1317,604 L1309,602 L1299,599 L1294,598 L1284,596 L1278,594 L1269,592 L1259,590 L1254,589 L1244,587 L1234,586 L1224,584 L1219,584 L1209,583 L1199,582 L1189,582 L1179,581 L1169,581 L1159,582 L1149,582 L1139,583 L1129,583 L1119,584 L1113,585 L1103,586 L1093,587 L1083,588 L1073,589 L1068,590 L1058,591 L1048,592 L1038,594 L1033,594 L1023,596 L1013,597 L1003,599 L998,599 L988,601 L978,602 L968,604 L963,604 L953,606 L943,607 L933,608 L923,609 L916,609 L908,610 L898,610 L888,610 L878,610 L870,609 L863,609 L853,607 L843,605 L838,604 L828,601 L821,599 L813,596 L808,593 L801,589 L794,584 L788,579 L784,574 L781,569 L777,563 L775,554 L773,544 L774,534 L776,524 L777,517 L780,509 L783,503 L787,493 L790,488 L793,483 L797,475 L802,468 L805,463 L809,458 L813,453 L818,446 L823,439 L827,433 L830,428 L834,423 L838,417 L843,409 L847,403 L850,398 L853,392 L858,383 L860,378 L863,372 L867,363 L869,357 L873,347 L874,342 L878,332 L879,327 L882,317 L883,312 L885,302 L887,292 L888,286 L889,277 L890,267 L891,257 L892,247 L893,240 L893,232 L894,222 L895,211 L896,201 L897,191 L898,186 L901,176 L903,170 L906,161 L908,156 L913,146 L916,141 L918,136 L923,128 L928,121 L931,116 L935,111 L939,106 L943,101 L948,96 L954,91 L960,86 L966,81 L973,76 L978,73 L983,70 L993,66 L998,64 L1006,60 L1013,58 L1021,55 L1028,53 L1038,51 L1043,50 L1053,47 L1063,45 L1068,45 L1078,43 L1088,42 L1098,40 L1103,40 L1113,39 L1124,38 L1134,37 L1144,36 L1154,36 L1159,35 L1169,35 L1179,34 L1189,33 L1199,32 L1209,32 L1219,31 L1229,30 L1234,30"/>
+<path class="c" pathLength="1" d="M1224,40 L1234,39 L1244,39 L1254,38 L1264,38 L1274,38 L1284,37 L1294,38 L1304,38 L1314,39 L1324,40 L1329,41 L1339,43 L1349,45 L1354,46 L1364,49 L1369,51 L1379,55 L1384,57 L1391,60 L1399,65 L1404,68 L1409,71 L1416,76 L1423,81 L1429,86 L1434,90 L1439,95 L1445,100 L1450,106 L1454,111 L1458,116 L1461,121 L1465,126 L1470,133 L1474,141 L1477,146 L1480,152 L1483,161 L1485,166 L1488,176 L1490,181 L1492,191 L1494,201 L1495,210 L1495,217 L1496,227 L1496,237 L1495,247 L1495,253 L1494,262 L1493,272 L1491,282 L1490,292 L1489,297 L1487,307 L1486,317 L1485,323 L1483,332 L1482,342 L1481,352 L1481,363 L1481,373 L1481,383 L1482,393 L1483,403 L1485,410 L1486,418 L1489,428 L1490,433 L1493,443 L1495,449 L1497,458 L1500,466 L1502,473 L1504,483 L1506,488 L1508,498 L1509,509 L1509,519 L1509,529 L1507,539 L1505,546 L1502,554 L1499,559 L1495,565 L1490,571 L1485,576 L1480,580 L1474,584 L1465,589 L1460,591 L1451,594 L1445,596 L1434,598 L1425,599 L1419,600 L1409,600 L1399,600 L1394,599 L1384,598 L1374,597 L1364,595 L1359,594 L1349,592 L1339,589 L1334,588 L1324,586 L1318,584 L1309,582 L1299,579 L1294,578 L1284,576 L1276,574 L1269,573 L1259,571 L1249,569 L1244,568 L1234,567 L1224,566 L1214,565 L1204,564 L1199,564 L1189,563 L1179,563 L1169,563 L1159,563 L1149,564 L1144,564 L1134,565 L1124,565 L1113,566 L1103,567 L1093,568 L1084,569 L1078,570 L1068,571 L1058,572 L1048,573 L1042,574 L1033,575 L1023,576 L1013,577 L1003,579 L998,579 L988,581 L978,582 L968,583 L958,584 L953,584 L943,585 L933,586 L923,586 L913,586 L903,586 L893,585 L884,584 L878,583 L868,581 L861,579 L853,576 L848,574 L839,569 L833,565 L828,560 L823,554 L820,549 L818,544 L815,534 L815,524 L816,514 L818,507 L820,498 L823,492 L826,483 L829,478 L833,471 L837,463 L839,458 L843,452 L848,444 L851,438 L854,433 L858,426 L862,418 L865,413 L868,407 L872,398 L874,393 L878,385 L881,378 L883,372 L886,363 L888,357 L891,347 L893,340 L895,332 L897,322 L898,317 L900,307 L902,297 L903,292 L904,282 L906,272 L907,262 L908,252 L908,247 L909,237 L910,227 L911,217 L912,206 L913,197 L914,191 L916,181 L918,175 L921,166 L923,160 L927,151 L930,146 L933,140 L938,132 L942,126 L945,121 L949,116 L954,111 L958,106 L964,101 L969,96 L976,91 L983,86 L988,83 L993,80 L1002,76 L1008,73 L1014,70 L1023,67 L1028,65 L1038,63 L1046,60 L1053,59 L1063,57 L1070,55 L1078,54 L1088,52 L1098,51 L1105,50 L1113,49 L1124,48 L1134,47 L1144,47 L1154,46 L1159,45 L1169,45 L1179,44 L1189,43 L1199,42 L1209,41 L1219,41 L1224,40"/>
+<path class="c" pathLength="1" d="M1214,50 L1224,49 L1234,48 L1244,48 L1254,47 L1264,47 L1274,46 L1284,46 L1294,46 L1304,47 L1314,48 L1324,49 L1332,50 L1339,52 L1349,54 L1354,56 L1364,59 L1369,61 L1379,65 L1384,67 L1391,70 L1399,76 L1404,79 L1409,82 L1414,86 L1420,91 L1426,96 L1431,101 L1436,106 L1441,111 L1445,116 L1450,121 L1455,129 L1459,136 L1462,141 L1465,146 L1470,156 L1472,161 L1475,169 L1477,176 L1480,186 L1481,191 L1482,201 L1483,211 L1484,222 L1484,232 L1483,242 L1482,252 L1481,262 L1480,272 L1479,277 L1477,287 L1475,297 L1474,302 L1471,312 L1470,321 L1468,327 L1466,337 L1465,347 L1464,352 L1463,363 L1462,373 L1461,383 L1461,393 L1462,403 L1463,413 L1464,423 L1465,428 L1466,438 L1469,448 L1470,453 L1472,463 L1474,473 L1475,478 L1477,488 L1478,498 L1478,509 L1478,519 L1476,529 L1474,534 L1470,542 L1465,549 L1461,554 L1455,559 L1450,562 L1445,565 L1436,569 L1429,571 L1419,573 L1413,574 L1404,575 L1394,575 L1384,574 L1379,574 L1369,573 L1359,571 L1349,569 L1344,568 L1334,566 L1324,564 L1319,563 L1309,561 L1300,559 L1294,558 L1284,556 L1274,554 L1269,553 L1259,551 L1249,550 L1239,549 L1234,548 L1224,547 L1214,547 L1204,546 L1194,546 L1184,546 L1174,546 L1164,546 L1154,546 L1144,546 L1134,547 L1124,547 L1113,548 L1105,549 L1098,549 L1088,550 L1078,551 L1068,552 L1058,553 L1050,554 L1043,554 L1033,555 L1023,556 L1013,557 L1003,558 L993,559 L988,559 L978,560 L968,560 L958,560 L948,560 L938,560 L928,560 L920,559 L913,558 L903,556 L896,554 L888,551 L883,548 L875,544 L870,539 L865,534 L862,529 L859,519 L858,513 L857,503 L858,498 L860,488 L863,478 L864,473 L868,464 L870,458 L873,452 L876,443 L879,438 L883,428 L885,423 L888,416 L891,408 L893,403 L896,393 L898,388 L901,378 L903,371 L905,363 L908,352 L909,347 L911,337 L913,329 L914,322 L916,312 L918,302 L919,297 L920,287 L921,277 L923,267 L923,262 L924,252 L925,242 L926,232 L927,222 L928,211 L928,206 L930,196 L932,186 L933,181 L936,171 L938,165 L942,156 L944,151 L948,144 L953,136 L956,131 L960,126 L964,121 L968,116 L973,111 L979,106 L985,101 L992,96 L998,92 L1003,89 L1010,86 L1018,82 L1023,80 L1033,76 L1038,74 L1048,71 L1053,70 L1063,68 L1073,66 L1078,65 L1088,63 L1098,61 L1106,60 L1113,59 L1124,58 L1134,57 L1144,56 L1154,55 L1159,55 L1169,54 L1179,53 L1189,52 L1199,51 L1209,51 L1214,50"/>
+<path class="c" pathLength="1" d="M1264,55 L1274,55 L1284,55 L1294,55 L1303,55 L1309,56 L1319,57 L1329,58 L1339,60 L1344,62 L1354,65 L1359,66 L1369,70 L1374,72 L1381,76 L1389,80 L1394,83 L1399,86 L1405,91 L1412,96 L1418,101 L1423,106 L1428,111 L1433,116 L1437,121 L1441,126 L1445,131 L1450,139 L1454,146 L1456,151 L1460,158 L1463,166 L1465,171 L1468,181 L1470,190 L1471,196 L1472,206 L1473,217 L1473,227 L1472,237 L1471,247 L1470,257 L1469,262 L1467,272 L1465,282 L1464,287 L1461,297 L1460,303 L1457,312 L1455,322 L1453,327 L1450,337 L1449,342 L1447,352 L1445,363 L1444,368 L1442,378 L1441,388 L1440,398 L1440,408 L1440,418 L1440,428 L1440,438 L1441,448 L1442,458 L1443,468 L1443,478 L1443,488 L1442,498 L1440,509 L1438,514 L1434,520 L1429,527 L1424,532 L1419,535 L1412,539 L1404,542 L1394,544 L1389,544 L1379,545 L1369,545 L1359,545 L1351,544 L1344,543 L1334,542 L1324,540 L1314,539 L1309,538 L1299,537 L1289,535 L1279,534 L1274,534 L1264,532 L1254,531 L1244,531 L1234,530 L1224,529 L1214,529 L1207,529 L1199,528 L1189,528 L1179,528 L1169,528 L1159,529 L1154,529 L1144,529 L1134,530 L1124,530 L1113,531 L1103,531 L1093,532 L1083,532 L1073,533 L1063,534 L1058,534 L1048,534 L1038,535 L1028,535 L1018,535 L1008,535 L998,535 L988,535 L978,534 L970,534 L963,533 L953,531 L943,529 L938,528 L928,524 L923,521 L918,518 L913,514 L908,507 L904,498 L902,493 L901,483 L901,473 L903,463 L904,458 L906,448 L908,440 L910,433 L912,423 L913,418 L916,408 L918,398 L919,393 L921,383 L923,373 L924,368 L926,357 L927,347 L928,342 L930,332 L931,322 L933,313 L934,307 L935,297 L937,287 L938,278 L939,272 L940,262 L941,252 L942,242 L943,232 L943,227 L944,217 L945,206 L947,196 L948,190 L950,181 L953,171 L955,166 L958,158 L962,151 L964,146 L968,140 L973,133 L978,127 L983,121 L988,116 L993,112 L998,108 L1003,104 L1009,101 L1017,96 L1023,93 L1028,90 L1038,86 L1043,85 L1053,81 L1058,80 L1068,77 L1077,76 L1083,74 L1093,72 L1103,71 L1108,70 L1118,69 L1129,68 L1139,66 L1148,65 L1154,65 L1164,64 L1174,63 L1184,62 L1194,61 L1199,60 L1209,59 L1219,58 L1229,58 L1239,57 L1249,56 L1259,55 L1264,55"/>
+<path class="c m" pathLength="1" d="M1239,65 L1249,64 L1259,64 L1269,63 L1279,63 L1289,63 L1299,63 L1309,64 L1319,65 L1324,66 L1334,68 L1344,70 L1349,72 L1359,75 L1364,77 L1372,81 L1379,84 L1384,87 L1390,91 L1397,96 L1404,101 L1409,105 L1414,110 L1419,115 L1424,120 L1429,126 L1433,131 L1437,136 L1440,141 L1445,149 L1448,156 L1450,161 L1454,171 L1456,176 L1458,186 L1460,192 L1461,201 L1462,211 L1462,222 L1462,232 L1461,242 L1460,251 L1459,257 L1456,267 L1455,275 L1453,282 L1450,292 L1448,297 L1445,307 L1443,312 L1440,322 L1438,327 L1435,337 L1433,342 L1430,352 L1429,357 L1426,368 L1424,373 L1422,383 L1420,393 L1419,398 L1417,408 L1415,418 L1414,424 L1413,433 L1412,443 L1410,453 L1409,458 L1407,468 L1404,476 L1401,483 L1398,488 L1394,493 L1389,498 L1382,503 L1374,507 L1369,509 L1359,511 L1349,513 L1341,514 L1334,514 L1324,514 L1314,514 L1304,514 L1298,514 L1289,513 L1279,513 L1269,512 L1259,512 L1249,512 L1239,512 L1229,511 L1219,511 L1209,511 L1199,511 L1189,511 L1179,511 L1169,511 L1159,512 L1149,512 L1139,512 L1129,512 L1118,513 L1108,513 L1098,513 L1091,514 L1083,514 L1073,514 L1063,514 L1053,514 L1045,514 L1038,513 L1028,513 L1018,512 L1008,510 L999,509 L993,507 L983,504 L978,502 L970,498 L963,494 L958,489 L953,484 L949,478 L947,473 L944,463 L943,458 L941,448 L941,438 L941,428 L941,418 L942,408 L942,398 L943,388 L943,383 L944,373 L945,363 L946,352 L947,342 L948,332 L949,327 L950,317 L951,307 L953,297 L953,292 L954,282 L956,272 L957,262 L958,252 L959,247 L960,237 L961,227 L962,217 L963,206 L964,201 L965,191 L968,181 L969,176 L972,166 L975,161 L978,154 L983,146 L986,141 L990,136 L994,131 L999,126 L1004,121 L1010,116 L1017,111 L1023,107 L1028,104 L1035,101 L1043,97 L1048,95 L1058,91 L1063,90 L1073,87 L1079,86 L1088,84 L1098,82 L1105,81 L1113,79 L1124,78 L1134,77 L1143,76 L1149,75 L1159,74 L1169,73 L1179,71 L1187,70 L1194,70 L1204,69 L1214,68 L1224,67 L1234,66 L1239,65"/>
+<path class="c" pathLength="1" d="M1224,75 L1234,74 L1244,73 L1254,72 L1264,72 L1274,71 L1284,71 L1294,71 L1304,72 L1314,73 L1324,74 L1330,76 L1339,78 L1349,81 L1354,82 L1362,86 L1369,89 L1374,91 L1382,96 L1389,101 L1394,104 L1399,108 L1404,113 L1409,117 L1414,123 L1419,128 L1424,135 L1429,141 L1432,146 L1435,151 L1439,160 L1442,166 L1445,173 L1447,181 L1449,191 L1450,196 L1451,206 L1452,217 L1452,227 L1451,237 L1450,246 L1448,252 L1446,262 L1445,269 L1442,277 L1439,285 L1437,292 L1434,299 L1432,307 L1429,312 L1426,322 L1424,327 L1419,337 L1417,342 L1414,350 L1411,357 L1409,363 L1406,373 L1404,378 L1400,388 L1398,393 L1395,403 L1393,408 L1389,418 L1387,423 L1384,431 L1381,438 L1379,443 L1374,451 L1369,458 L1365,463 L1359,468 L1354,472 L1349,475 L1343,478 L1334,482 L1329,483 L1319,486 L1309,488 L1304,488 L1294,490 L1284,491 L1274,491 L1264,492 L1254,492 L1244,493 L1234,493 L1224,493 L1215,493 L1209,494 L1199,494 L1189,494 L1179,494 L1169,494 L1159,495 L1149,495 L1139,495 L1129,495 L1118,495 L1108,495 L1098,495 L1088,495 L1078,494 L1068,494 L1063,493 L1053,492 L1043,490 L1033,488 L1028,487 L1018,484 L1013,482 L1006,478 L998,473 L993,469 L988,464 L984,458 L981,453 L978,448 L974,438 L973,433 L970,423 L968,413 L968,408 L967,398 L966,388 L965,378 L965,368 L965,357 L965,347 L966,337 L967,327 L968,317 L968,312 L969,302 L971,292 L972,282 L973,272 L974,267 L975,257 L976,247 L977,237 L978,227 L979,222 L980,211 L981,201 L983,191 L984,186 L987,176 L989,171 L993,161 L995,156 L998,151 L1003,144 L1008,137 L1013,132 L1018,127 L1023,123 L1028,119 L1034,116 L1042,111 L1048,108 L1053,106 L1063,102 L1068,100 L1078,97 L1083,95 L1093,93 L1103,91 L1108,90 L1118,88 L1129,87 L1138,86 L1144,85 L1154,84 L1164,82 L1174,81 L1179,80 L1189,79 L1199,78 L1209,77 L1219,76 L1224,75"/>
+<path class="c" pathLength="1" d="M1254,80 L1264,80 L1274,79 L1284,79 L1294,79 L1304,80 L1310,81 L1319,82 L1329,84 L1337,86 L1344,88 L1352,91 L1359,93 L1364,96 L1373,101 L1379,104 L1384,108 L1389,111 L1395,116 L1400,121 L1405,126 L1410,131 L1414,136 L1419,143 L1424,151 L1427,156 L1430,161 L1434,171 L1436,176 L1438,186 L1439,192 L1441,201 L1442,211 L1442,222 L1441,232 L1440,242 L1439,247 L1436,257 L1434,264 L1432,272 L1429,279 L1427,287 L1424,293 L1420,302 L1418,307 L1414,315 L1411,322 L1409,327 L1404,336 L1401,342 L1399,347 L1394,356 L1391,363 L1389,368 L1384,376 L1381,383 L1379,388 L1374,396 L1370,403 L1367,408 L1364,413 L1359,421 L1354,427 L1349,433 L1345,438 L1339,443 L1334,447 L1329,450 L1324,453 L1314,458 L1309,460 L1300,463 L1294,465 L1284,467 L1279,468 L1269,470 L1259,472 L1249,473 L1244,473 L1234,474 L1224,475 L1214,476 L1204,476 L1194,477 L1184,477 L1174,477 L1164,477 L1154,477 L1144,477 L1134,477 L1124,477 L1113,477 L1103,476 L1093,475 L1083,474 L1078,473 L1068,472 L1058,469 L1053,468 L1043,465 L1038,462 L1030,458 L1023,454 L1018,449 L1013,444 L1008,438 L1005,433 L1002,428 L998,420 L995,413 L993,406 L991,398 L989,388 L988,383 L986,373 L985,363 L985,352 L985,342 L985,332 L985,322 L986,312 L987,302 L988,292 L989,287 L990,277 L991,267 L992,257 L993,249 L994,242 L995,232 L996,222 L997,211 L998,206 L1000,196 L1002,186 L1003,181 L1007,171 L1009,166 L1013,158 L1017,151 L1021,146 L1025,141 L1030,136 L1036,131 L1043,126 L1048,122 L1053,119 L1060,116 L1068,112 L1073,110 L1083,107 L1088,105 L1098,103 L1107,101 L1113,99 L1124,98 L1134,96 L1139,95 L1149,94 L1159,92 L1169,91 L1174,90 L1184,89 L1194,87 L1204,86 L1209,85 L1219,84 L1229,83 L1239,82 L1249,81 L1254,80"/>
+<path class="c" pathLength="1" d="M1234,90 L1244,89 L1254,88 L1264,88 L1274,87 L1284,87 L1294,87 L1304,88 L1314,89 L1322,91 L1329,92 L1339,95 L1344,97 L1354,100 L1359,103 L1365,106 L1374,111 L1379,115 L1384,118 L1389,123 L1394,127 L1399,132 L1404,138 L1409,145 L1414,151 L1417,156 L1419,161 L1424,171 L1426,176 L1429,186 L1430,191 L1431,201 L1432,211 L1432,222 L1431,232 L1429,240 L1428,247 L1426,257 L1424,262 L1421,272 L1419,277 L1414,287 L1412,292 L1409,298 L1405,307 L1402,312 L1399,317 L1394,326 L1391,332 L1388,337 L1384,343 L1379,351 L1376,357 L1372,363 L1369,368 L1364,375 L1359,382 L1355,388 L1352,393 L1348,398 L1344,403 L1339,408 L1334,413 L1329,418 L1323,423 L1316,428 L1309,432 L1304,435 L1298,438 L1289,442 L1284,444 L1274,447 L1269,448 L1259,451 L1249,453 L1244,454 L1234,455 L1224,456 L1214,458 L1206,458 L1199,459 L1189,459 L1179,460 L1169,460 L1159,460 L1149,460 L1139,459 L1129,459 L1121,458 L1113,457 L1103,456 L1093,454 L1087,453 L1078,451 L1069,448 L1063,446 L1057,443 L1048,438 L1043,434 L1038,430 L1033,425 L1028,419 L1024,413 L1021,408 L1018,403 L1014,393 L1012,388 L1009,378 L1008,373 L1006,363 L1005,352 L1004,342 L1004,332 L1004,322 L1004,312 L1005,302 L1006,292 L1007,282 L1008,272 L1009,267 L1010,257 L1011,247 L1012,237 L1013,227 L1014,222 L1015,211 L1016,201 L1018,193 L1020,186 L1023,176 L1025,171 L1028,164 L1033,156 L1037,151 L1041,146 L1046,141 L1052,136 L1058,131 L1063,128 L1068,125 L1078,121 L1083,119 L1092,116 L1098,114 L1108,111 L1113,110 L1124,108 L1134,106 L1139,105 L1149,104 L1159,102 L1166,101 L1174,99 L1184,98 L1194,96 L1199,95 L1209,94 L1219,92 L1229,91 L1234,90"/>
+<path class="c m" pathLength="1" d="M1269,95 L1279,95 L1289,95 L1298,96 L1304,96 L1314,98 L1324,99 L1329,101 L1339,104 L1345,106 L1354,110 L1359,112 L1365,116 L1373,121 L1379,126 L1384,130 L1389,135 L1394,140 L1399,146 L1403,151 L1406,156 L1409,162 L1414,171 L1416,176 L1419,186 L1420,191 L1421,201 L1422,211 L1422,222 L1421,232 L1419,238 L1418,247 L1415,257 L1413,262 L1409,271 L1407,277 L1404,282 L1399,292 L1397,297 L1394,302 L1389,310 L1385,317 L1381,322 L1378,327 L1374,333 L1369,340 L1364,347 L1360,352 L1356,357 L1352,363 L1348,368 L1344,373 L1339,378 L1334,383 L1329,388 L1324,393 L1319,398 L1313,403 L1306,408 L1299,412 L1294,415 L1289,418 L1279,423 L1274,425 L1265,428 L1259,430 L1249,433 L1244,434 L1234,436 L1224,438 L1219,438 L1209,440 L1199,441 L1189,441 L1179,442 L1169,442 L1159,442 L1149,441 L1139,440 L1129,439 L1119,438 L1113,437 L1103,435 L1096,433 L1088,430 L1082,428 L1073,424 L1068,421 L1063,417 L1058,413 L1052,408 L1048,403 L1043,397 L1038,389 L1035,383 L1033,378 L1030,368 L1028,363 L1026,352 L1025,342 L1024,332 L1023,322 L1023,317 L1023,312 L1024,302 L1024,292 L1025,282 L1026,272 L1027,262 L1028,252 L1029,247 L1030,237 L1031,227 L1032,217 L1033,206 L1034,201 L1036,191 L1038,183 L1041,176 L1043,171 L1048,162 L1053,156 L1057,151 L1062,146 L1068,141 L1073,138 L1078,135 L1086,131 L1093,128 L1099,126 L1108,123 L1116,121 L1124,119 L1134,117 L1139,116 L1149,114 L1159,112 L1164,111 L1174,109 L1184,107 L1191,106 L1199,104 L1209,103 L1219,101 L1224,100 L1234,99 L1244,98 L1254,97 L1264,96 L1269,95"/>
+<path class="c" pathLength="1" d="M1249,105 L1259,104 L1269,104 L1279,103 L1289,103 L1299,104 L1309,105 L1314,106 L1324,108 L1333,111 L1339,113 L1347,116 L1354,120 L1359,122 L1365,126 L1372,131 L1378,136 L1383,141 L1387,146 L1391,151 L1395,156 L1399,164 L1403,171 L1405,176 L1408,186 L1410,191 L1411,201 L1412,211 L1412,222 L1410,232 L1409,237 L1407,247 L1404,254 L1402,262 L1399,267 L1395,277 L1392,282 L1389,287 L1384,295 L1380,302 L1376,307 L1373,312 L1369,317 L1364,324 L1359,330 L1354,336 L1349,342 L1344,347 L1340,352 L1335,357 L1330,363 L1325,368 L1319,372 L1314,377 L1309,381 L1304,385 L1299,388 L1292,393 L1284,397 L1279,400 L1273,403 L1264,407 L1259,409 L1249,412 L1244,414 L1234,416 L1226,418 L1219,419 L1209,421 L1199,422 L1189,423 L1179,423 L1174,423 L1168,423 L1159,423 L1149,422 L1139,421 L1129,419 L1124,418 L1113,415 L1107,413 L1098,410 L1093,407 L1086,403 L1079,398 L1073,393 L1068,388 L1064,383 L1060,378 L1057,373 L1053,365 L1050,357 L1048,351 L1046,342 L1045,332 L1043,322 L1043,317 L1043,307 L1043,297 L1043,292 L1044,282 L1045,272 L1045,262 L1046,252 L1047,242 L1048,232 L1048,225 L1049,217 L1050,206 L1052,196 L1053,191 L1057,181 L1059,176 L1063,168 L1068,161 L1073,156 L1078,152 L1083,148 L1088,145 L1095,141 L1103,137 L1108,135 L1118,132 L1124,131 L1134,128 L1143,126 L1149,125 L1159,122 L1166,121 L1174,119 L1184,117 L1189,116 L1199,114 L1209,112 L1214,111 L1224,109 L1234,107 L1244,106 L1249,105"/>
+<path class="c" pathLength="1" d="M1239,115 L1249,114 L1259,113 L1269,112 L1279,112 L1289,112 L1299,113 L1309,114 L1319,116 L1324,117 L1334,120 L1339,122 L1347,126 L1354,130 L1359,133 L1364,137 L1369,141 L1375,146 L1379,151 L1384,158 L1389,166 L1392,171 L1395,176 L1398,186 L1399,191 L1401,201 L1402,211 L1401,222 L1400,232 L1399,237 L1396,247 L1394,252 L1390,262 L1387,267 L1384,273 L1379,281 L1376,287 L1372,292 L1369,297 L1364,303 L1359,309 L1354,315 L1349,321 L1344,326 L1339,332 L1334,337 L1329,341 L1324,346 L1319,350 L1314,354 L1309,358 L1304,363 L1297,368 L1289,373 L1284,376 L1279,378 L1271,383 L1264,386 L1259,388 L1249,392 L1244,393 L1234,396 L1228,398 L1219,400 L1209,401 L1199,402 L1194,403 L1184,403 L1174,403 L1164,403 L1159,402 L1149,401 L1139,399 L1134,398 L1124,395 L1118,393 L1108,388 L1103,385 L1098,381 L1093,377 L1088,372 L1083,367 L1078,359 L1075,352 L1072,347 L1069,337 L1067,332 L1065,322 L1064,312 L1064,302 L1063,292 L1064,282 L1064,272 L1064,262 L1065,252 L1065,242 L1066,232 L1066,222 L1067,211 L1068,205 L1070,196 L1073,187 L1076,181 L1078,176 L1083,169 L1088,164 L1093,160 L1098,156 L1107,151 L1113,148 L1119,146 L1129,143 L1134,141 L1144,138 L1151,136 L1159,134 L1169,131 L1174,130 L1184,127 L1190,126 L1199,124 L1209,121 L1214,120 L1224,118 L1234,116 L1239,115"/>
+<path class="c" pathLength="1" d="M1274,121 L1284,121 L1290,121 L1299,122 L1309,123 L1319,125 L1324,127 L1334,130 L1339,132 L1346,136 L1354,141 L1359,145 L1364,150 L1369,155 L1374,161 L1378,166 L1381,171 L1384,178 L1387,186 L1389,195 L1390,201 L1391,211 L1390,222 L1389,228 L1387,237 L1384,246 L1382,252 L1379,258 L1375,267 L1372,272 L1368,277 L1364,283 L1359,290 L1354,296 L1349,302 L1344,307 L1339,312 L1334,317 L1329,322 L1324,326 L1319,330 L1314,334 L1309,338 L1303,342 L1296,347 L1289,352 L1284,355 L1279,358 L1270,363 L1264,365 L1258,368 L1249,371 L1244,373 L1234,376 L1227,378 L1219,379 L1209,381 L1199,382 L1189,382 L1179,382 L1169,382 L1159,380 L1149,378 L1144,376 L1134,373 L1129,370 L1124,367 L1117,363 L1111,357 L1106,352 L1102,347 L1098,342 L1093,332 L1092,327 L1089,317 L1088,312 L1086,302 L1085,292 L1085,282 L1085,272 L1085,262 L1085,252 L1085,242 L1085,232 L1086,222 L1087,211 L1088,203 L1090,196 L1093,189 L1098,181 L1102,176 L1107,171 L1113,166 L1118,163 L1124,161 L1133,156 L1139,154 L1146,151 L1154,149 L1161,146 L1169,144 L1176,141 L1184,139 L1193,136 L1199,134 L1209,132 L1214,130 L1224,128 L1233,126 L1239,125 L1249,123 L1259,122 L1269,121 L1274,121"/>
+<path class="c m" pathLength="1" d="M1264,131 L1274,130 L1284,130 L1294,130 L1299,131 L1309,133 L1319,135 L1324,137 L1334,141 L1339,144 L1344,147 L1350,151 L1356,156 L1361,161 L1365,166 L1369,173 L1374,181 L1376,186 L1378,196 L1379,203 L1380,211 L1379,218 L1378,227 L1376,237 L1374,242 L1370,252 L1367,257 L1364,262 L1359,269 L1354,276 L1350,282 L1345,287 L1341,292 L1336,297 L1330,302 L1324,307 L1319,312 L1314,315 L1309,319 L1304,323 L1297,327 L1289,332 L1284,335 L1279,338 L1270,342 L1264,345 L1258,347 L1249,351 L1244,352 L1234,355 L1224,357 L1219,358 L1209,359 L1199,360 L1189,360 L1179,359 L1169,357 L1164,356 L1154,353 L1149,350 L1143,347 L1136,342 L1130,337 L1126,332 L1122,327 L1118,321 L1115,312 L1113,307 L1111,297 L1109,287 L1108,282 L1107,272 L1107,262 L1107,252 L1107,242 L1107,232 L1108,222 L1108,217 L1111,206 L1113,199 L1118,191 L1122,186 L1127,181 L1133,176 L1139,173 L1144,170 L1151,166 L1159,162 L1164,160 L1173,156 L1179,154 L1185,151 L1194,148 L1199,146 L1209,143 L1214,141 L1224,138 L1233,136 L1239,135 L1249,133 L1259,131 L1264,131"/>
+<path class="c" pathLength="1" d="M1269,141 L1279,140 L1289,140 L1296,141 L1304,142 L1314,145 L1319,146 L1329,151 L1334,153 L1339,157 L1345,161 L1350,166 L1354,171 L1359,179 L1363,186 L1365,191 L1367,201 L1367,211 L1367,222 L1364,232 L1363,237 L1359,245 L1356,252 L1353,257 L1349,262 L1344,269 L1339,274 L1334,280 L1329,285 L1324,289 L1319,293 L1314,297 L1307,302 L1299,307 L1294,310 L1289,313 L1281,317 L1274,321 L1269,323 L1259,327 L1254,328 L1244,331 L1239,333 L1229,335 L1219,336 L1209,336 L1199,336 L1189,334 L1180,332 L1174,330 L1168,327 L1160,322 L1154,317 L1149,312 L1146,307 L1143,302 L1139,293 L1137,287 L1134,277 L1133,272 L1132,262 L1132,252 L1132,242 L1132,232 L1134,223 L1135,217 L1139,207 L1142,201 L1145,196 L1150,191 L1155,186 L1161,181 L1169,176 L1174,173 L1179,170 L1186,166 L1194,162 L1199,160 L1207,156 L1214,154 L1221,151 L1229,148 L1237,146 L1244,144 L1254,142 L1264,141 L1269,141"/>
+<path class="c" pathLength="1" d="M1249,155 L1259,153 L1269,152 L1279,151 L1289,152 L1299,153 L1309,155 L1314,157 L1323,161 L1329,165 L1334,169 L1339,174 L1344,180 L1348,186 L1350,191 L1353,201 L1354,211 L1353,222 L1350,232 L1348,237 L1344,245 L1340,252 L1336,257 L1332,262 L1327,267 L1322,272 L1316,277 L1309,282 L1304,286 L1299,289 L1293,292 L1284,297 L1279,299 L1271,302 L1264,305 L1256,307 L1249,309 L1239,310 L1229,311 L1219,311 L1209,310 L1199,307 L1194,305 L1187,302 L1180,297 L1175,292 L1171,287 L1168,282 L1164,272 L1162,267 L1160,257 L1159,247 L1160,237 L1161,227 L1164,218 L1166,211 L1169,206 L1174,200 L1179,194 L1184,189 L1189,185 L1194,181 L1200,176 L1208,171 L1214,168 L1219,166 L1229,162 L1234,160 L1244,157 L1249,155"/>
+<path class="c" pathLength="1" d="M1269,166 L1279,165 L1289,166 L1294,166 L1304,169 L1310,171 L1319,176 L1324,181 L1329,186 L1332,191 L1335,196 L1337,206 L1337,217 L1335,227 L1333,232 L1329,239 L1324,246 L1320,252 L1314,257 L1309,261 L1304,265 L1299,269 L1293,272 L1284,277 L1279,279 L1269,282 L1264,283 L1254,285 L1244,286 L1234,285 L1224,284 L1219,282 L1209,277 L1204,273 L1199,267 L1195,262 L1193,257 L1190,247 L1189,237 L1190,227 L1193,217 L1195,211 L1199,206 L1204,199 L1209,194 L1214,189 L1219,185 L1225,181 L1234,176 L1239,174 L1246,171 L1254,169 L1264,166 L1269,166"/>
+<path class="c m" pathLength="1" d="M1264,186 L1274,184 L1284,184 L1294,186 L1299,188 L1304,191 L1309,196 L1314,206 L1315,211 L1314,219 L1312,227 L1309,232 L1304,238 L1299,242 L1293,247 L1284,252 L1279,254 L1269,257 L1264,257 L1254,258 L1249,257 L1239,253 L1234,250 L1229,245 L1225,237 L1224,232 L1224,224 L1226,217 L1229,210 L1234,203 L1239,198 L1244,195 L1249,191 L1259,187 L1264,186"/>
+    </g>
+    <g class="pin" transform="translate(1180 300)">
+      <circle class="ring" r="16"/><circle class="dot" r="6"/>
+    </g>
+  </svg>
+  <div class="wrap hero-inner">
+    <div class="top">
+      <a class="mark" href="#">JP Orozco</a>
+      <nav aria-label="Secciones">
+        <a class="nav-link" href="#proyectos"><span lang="es">Proyectos</span><span lang="en">Work</span></a>
+        <a class="nav-link" href="#trayectoria"><span lang="es">Trayectoria</span><span lang="en">Experience</span></a>
+        <a class="nav-link" href="#contacto"><span lang="es">Contacto</span><span lang="en">Contact</span></a>
+        <div class="lang" role="group" aria-label="Idioma / Language">
+          <button type="button" data-set="es" aria-pressed="true">ES</button>
+          <button type="button" data-set="en" aria-pressed="false">EN</button>
+        </div>
+      </nav>
     </div>
-    <h1>José Pablo<br>Orozco Salas</h1>
-    <p class="role">Software Engineer. Diseño <strong>APIs, integraciones y sistemas IoT</strong> de punta a punta, con rumbo a la arquitectura de software.</p>
-    <p class="pitch">Ingeniero en Informática e Ingeniero Eléctrico. Antes de dedicarme al software pasé más de diez años en proyectos de infraestructura, soporte técnico y ventas técnicas, así que diseño sistemas pensando en quién los va a usar y en qué problema de negocio resuelven.</p>
+    <div class="intro">
+      <span class="available"><span lang="es">Disponible para roles remotos o híbridos en Costa Rica</span><span lang="en">Open to remote or hybrid roles from Costa Rica</span></span>
+      <h1>José Pablo <span>Orozco Salas</span></h1>
+      <p class="role"><span lang="es">Software Engineer. Construyo backends en Python, APIs e integraciones que llevan datos del campo a producción.</span><span lang="en">Software Engineer. I build Python backends, APIs and integrations that take data from the field to production.</span></p>
+      <div class="actions">
+        <a class="btn" href="#proyectos"><span lang="es">Ver proyectos</span><span lang="en">See my work</span></a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/jos%C3%A9-pablo-orozco-salas-8b766bb8/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn ghost" href="https://github.com/ozco26" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </div>
+  <p class="coords" style="right: max(20px, calc((100% - 1120px) / 2)); bottom: 28px; text-align: right;">Heredia, Costa Rica<br>9.998° N, 84.117° W</p>
+</header>
+
+<main class="wrap">
+
+  <section id="proyectos" aria-labelledby="t-proy">
+    <div class="sec-title">
+      <h2 id="t-proy"><span lang="es">Proyectos</span><span lang="en">Work</span></h2>
+      <p><span lang="es">Trabajo de producción en MrBot y proyectos propios, con el código abierto cuando se puede.</span><span lang="en">Production work at MrBot and my own projects, with open code where possible.</span></p>
+    </div>
+
+    <article class="lead-project">
+      <div>
+        <h3>ClimMob</h3>
+        <p class="where"><span lang="es">Plataforma de código abierto, trabajo en MrBot Software Solutions, 2025–2026</span><span lang="en">Open-source platform, work at MrBot Software Solutions, 2025–2026</span></p>
+        <p class="desc"><span lang="es">Software de ciencia ciudadana agrícola: organiza ensayos a gran escala en los que miles de agricultores comparan variedades y prácticas en su propio campo, y convierte sus respuestas en reportes automáticos.</span><span lang="en">Agricultural citizen-science software: it runs large-scale trials where thousands of farmers compare crop varieties and practices in their own fields, and turns their answers into automatic reports.</span></p>
+        <ul class="did">
+          <li><span lang="es">Construí el módulo de resumen y curaduría de datos para administradores: tabla de resumen en base de datos, filtros, historial de cambios y correos cuando un proyecto cambia de estado.</span><span lang="en">Built the project summary and data-curation module for administrators: a database-backed summary table, filters, change history and emails when a project changes status.</span></li>
+          <li><span lang="es">Refactoricé vistas y rutas de la API y escribí pruebas unitarias con 97–100% de cobertura en los módulos de creación, registro y enumeradores.</span><span lang="en">Refactored API views and routes and wrote unit tests reaching 97–100% coverage on the project creation, registry and enumerator modules.</span></li>
+          <li><span lang="es">Agregué validadores de acceso para proyectos cerrados y formularios de metadatos que muestran campos solo cuando aplican.</span><span lang="en">Added access validators for closed projects and metadata forms that show fields only when they apply.</span></li>
+        </ul>
+        <div class="links">
+          <a href="https://github.com/mrbotcr/py3ClimMob/commits?author=PabloMrBot" target="_blank" rel="noopener"><span lang="es">Ver mis commits</span><span lang="en">See my commits</span></a>
+          <a href="https://climmob.net" target="_blank" rel="noopener">climmob.net</a>
+        </div>
+      </div>
+      <div class="activity">
+        <p class="big">188<small><span lang="es">commits como PabloMrBot, de abril 2025 a mayo 2026</span><span lang="en">commits as PabloMrBot, April 2025 to May 2026</span></small></p>
+        <div class="bars" role="img" aria-label="Commits por mes: abr 37, may 31, jun 5, jul 14, ago 21, sep 6, oct 16, nov 15, dic 3, ene 3, feb 11, mar 7, abr 7, may 2">
+          <span style="height:100%" title="abr 2025: 37"></span><span style="height:84%" title="may 2025: 31"></span><span style="height:14%" title="jun 2025: 5"></span><span style="height:38%" title="jul 2025: 14"></span><span style="height:57%" title="ago 2025: 21"></span><span style="height:16%" title="sep 2025: 6"></span><span style="height:43%" title="oct 2025: 16"></span><span style="height:41%" title="nov 2025: 15"></span><span style="height:8%" title="dic 2025: 3"></span><span style="height:8%" title="ene 2026: 3"></span><span style="height:30%" title="feb 2026: 11"></span><span style="height:19%" title="mar 2026: 7"></span><span style="height:19%" title="abr 2026: 7"></span><span style="height:5%" title="may 2026: 2"></span>
+        </div>
+        <div class="axis"><span>2025-04</span><span>2025-11</span><span>2026-05</span></div>
+        <p class="stack-line"><b>Stack:</b> Python, Pyramid, SQLAlchemy, Alembic, MySQL, Celery, Redis, Jinja2, Docker</p>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="shot-wrap"><img src="img/marcasegura.jpg" alt="Pantalla de auditoría de marcas en MarcaSegura" width="1200" height="755"></div>
+      <div>
+        <h3>MarcaSegura</h3>
+        <p class="where"><span lang="es">Proyecto académico, ULACIT, 2026</span><span lang="en">Academic project, ULACIT, 2026</span></p>
+        <p class="desc"><span lang="es">Control de asistencia con marcas geolocalizadas. Revisa que cada entrada venga de un dispositivo autorizado y de una ubicación posible, y alerta cuando dos marcas exigirían viajar a más de 200 km/h.</span><span lang="en">Attendance tracking with geolocated check-ins. It verifies each check-in comes from an authorized device and a plausible location, and flags pairs of check-ins that would require travelling faster than 200 km/h.</span></p>
+        <div class="pipeline" aria-label="Pipeline de despliegue">
+          <div><b>Push</b><span>main</span></div>
+          <div><b><span lang="es">Pruebas</span><span lang="en">Tests</span></b><span>42 pytest</span></div>
+          <div><b><span lang="es">Credenciales</span><span lang="en">Credentials</span></b><span>IAM, OIDC</span></div>
+          <div><b>Deploy</b><span>Elastic Beanstalk</span></div>
+        </div>
+        <p class="tech">Flask, SQLAlchemy, Alembic, MySQL, <span lang="es">JWT en cookies con CSRF</span><span lang="en">JWT cookies with CSRF</span>, GitHub Actions, AWS</p>
+        <div class="links"><a href="https://github.com/ozco26/MarcaSegura" target="_blank" rel="noopener"><span lang="es">Ver código</span><span lang="en">View code</span></a></div>
+      </div>
+    </article>
+
+    <article class="project flip">
+      <div class="shot-wrap"><img src="img/emotiontrack.jpg" alt="Chat de análisis de llamadas en EmotionTrack" width="1200" height="791"></div>
+      <div>
+        <h3>EmotionTrack</h3>
+        <p class="where"><span lang="es">Proyecto personal, 2026</span><span lang="en">Personal project, 2026</span></p>
+        <p class="desc"><span lang="es">Asistente para analizar llamadas grabadas: transcribe los audios en local y responde preguntas sobre lo que se dijo, citando la parte de la transcripción que lo respalda.</span><span lang="en">Assistant for recorded calls: it transcribes audio locally and answers questions about what was said, citing the part of the transcript that supports each answer.</span></p>
+        <p class="tech">Flask, Whisper, <span lang="es">RAG con LlamaIndex</span><span lang="en">RAG with LlamaIndex</span>, Llama 3.1 (Groq)</p>
+        <div class="links"><a href="https://github.com/ozco26/EmotionTrack" target="_blank" rel="noopener"><span lang="es">Ver código</span><span lang="en">View code</span></a></div>
+      </div>
+    </article>
+
+    <div class="more">
+      <article>
+        <div class="noimg"><span lang="es">Código privado del cliente</span><span lang="en">Client code is private</span></div>
+        <h3><span lang="es">Plataforma IoT</span><span lang="en">IoT platform</span></h3>
+        <p><span lang="es">Aplicación de punta a punta en MrBot: datos desde estaciones en campo hasta el backend y la interfaz web.</span><span lang="en">End-to-end app at MrBot: data from field stations to the backend and web interface.</span></p>
+        <p class="tech">FastAPI, PostgreSQL, Vue + Vite</p>
+      </article>
+      <article>
+        <img src="img/v-vuelos.jpg" alt="Tablero de salidas de V-Vuelos" width="1200" height="556">
+        <h3>V-Vuelos</h3>
+        <p><span lang="es">Simulación de un aeropuerto, hecha en equipo: compra de vuelos para pasajeros y panel de operación con roles y permisos.</span><span lang="en">Team-built airport simulation: flight booking for passengers and an operations panel with roles and permissions.</span></p>
+        <p class="tech">C#, ASP.NET MVC, Entity Framework, SQL Server</p><p class="links" style="margin-top:0"><a href="https://github.com/ozco26/V-Vuelos" target="_blank" rel="noopener"><span lang="es">Ver código</span><span lang="en">View code</span></a></p>
+      </article>
+      <article>
+        <img src="img/mr-books.jpg" alt="Catálogo de Mr. Books" width="1200" height="1010">
+        <h3>Mr. Books</h3>
+        <p><span lang="es">Marketplace de libros usados con perfiles de cliente, vendedor y administrador, y aprobación antes de publicar.</span><span lang="en">Used-book marketplace with buyer, seller and admin roles, and approval before listings go live.</span></p>
+        <p class="tech">Node.js, Express, EJS, MySQL</p><p class="links" style="margin-top:0"><a href="https://github.com/ozco26/Mr-books" target="_blank" rel="noopener"><span lang="es">Ver código</span><span lang="en">View code</span></a></p>
+      </article>
+    </div>
+  </section>
+
+  <section id="trayectoria" aria-labelledby="t-tray">
+    <div class="sec-title">
+      <h2 id="t-tray"><span lang="es">Trayectoria</span><span lang="en">Experience</span></h2>
+      <p><span lang="es">Más de diez años en infraestructura, soporte y ventas técnicas antes del software. Por eso diseño pensando en quién usa el sistema y qué problema resuelve.</span><span lang="en">Over ten years in infrastructure, support and technical sales before software. That is why I design around who uses a system and what problem it solves.</span></p>
+    </div>
+    <div class="path">
+      <div class="step now"><span class="yr">2025 – <span lang="es">hoy</span><span lang="en">now</span></span><span class="line"></span><div class="what">
+        <h3>Software Engineer<span class="co">MrBot Software Solutions</span></h3>
+        <p><span lang="es">ClimMob, plataforma IoT, APIs REST e integraciones, despliegues automatizados en Linux y 20% más de cobertura de pruebas en el producto principal.</span><span lang="en">ClimMob, an IoT platform, REST APIs and integrations, automated Linux deployments and 20% more test coverage on the core product.</span></p></div></div>
+      <div class="step"><span class="yr">2023 – 2024</span><span class="line"></span><div class="what">
+        <h3><span lang="es">Desarrollador web</span><span lang="en">Web developer</span><span class="co">Freelance</span></h3>
+        <p><span lang="es">Aplicaciones web con Node.js y SQL, incluido un sistema de e-commerce.</span><span lang="en">Web applications with Node.js and SQL, including an e-commerce system.</span></p></div></div>
+      <div class="step"><span class="yr">2019</span><span class="line"></span><div class="what">
+        <h3>Software Developer<span class="co">Veinsa Motors</span></h3>
+        <p><span lang="es">Automatización de leads, integraciones con Facebook y sistemas de terceros, plataforma interna de tickets.</span><span lang="en">Lead automation, Facebook and third-party integrations, internal ticketing platform.</span></p></div></div>
+      <div class="step"><span class="yr">2013 – 2025</span><span class="line"></span><div class="what">
+        <h3><span lang="es">Ingeniería de proyectos, soporte y ventas técnicas</span><span lang="en">Project engineering, support and technical sales</span><span class="co">Legrand, Grupo VMA, Bolwar, COCOCO</span></h3>
+        <p><span lang="es">Redes, datacenter y seguridad para Centroamérica, el Caribe y Ecuador; herramientas internas que redujeron más de 10% el trabajo manual; licitaciones públicas en SICOP.</span><span lang="en">Networking, data center and security for Central America, the Caribbean and Ecuador; internal tools that cut manual work by more than 10%; public tenders on SICOP.</span></p></div></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="t-tools">
+    <div class="two">
+      <div>
+        <h2 id="t-tools" style="margin-bottom:28px"><span lang="es">Herramientas</span><span lang="en">Tools</span></h2>
+        <div class="tools">
+          <div><h3>Backend</h3><p>Python (FastAPI, Flask, Pyramid), Node.js, C# / .NET, REST APIs</p></div>
+          <div><h3><span lang="es">Datos</span><span lang="en">Data</span></h3><p>PostgreSQL, MySQL, SQL Server, Redis, SQLAlchemy, Alembic</p></div>
+          <div><h3><span lang="es">Entrega</span><span lang="en">Delivery</span></h3><p>Docker, Celery, GitHub Actions, AWS Elastic Beanstalk, Linux, Bash, pytest</p></div>
+          <div><h3><span lang="es">Frontend, IoT y automatización</span><span lang="en">Frontend, IoT and automation</span></h3><p>Vue + Vite, Figma, C++ / Arduino, n8n, <span lang="es">agentes de IA</span><span lang="en">AI agents</span></p></div>
+        </div>
+      </div>
+      <div>
+        <h2 style="margin-bottom:28px"><span lang="es">Formación</span><span lang="en">Education</span></h2>
+        <div class="edu">
+          <div><h3><span lang="es">Bachillerato en Ingeniería Informática</span><span lang="en">B.S. in Computer Engineering</span></h3><p><span lang="es">ULACIT, graduación en diciembre de 2026</span><span lang="en">ULACIT, graduating December 2026</span></p></div>
+          <div><h3><span lang="es">Licenciatura en Ingeniería Eléctrica</span><span lang="en">Licentiate in Electrical Engineering</span></h3><p><span lang="es">Universidad Fidélitas, plan de estudios concluido</span><span lang="en">Universidad Fidélitas, coursework completed</span></p></div>
+          <div><h3><span lang="es">Inglés intermedio-alto</span><span lang="en">Upper-intermediate English</span></h3><p>TOEIC 780/990, Listening 455 (B2)</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="closing" id="contacto">
+  <div class="wrap">
+    <h2><span lang="es">¿Buscas a alguien que entienda el sistema y el negocio detrás?</span><span lang="en">Looking for someone who understands both the system and the business behind it?</span></h2>
     <div class="contact">
-      <span class="chip"><span id="mail">orozco26pablo@gmail.com</span><button type="button" id="copy-mail">Copiar</button></span>
-      <a class="chip" href="https://github.com/ozco26" target="_blank" rel="noopener">github.com/ozco26</a>
-      <a class="chip" href="https://www.linkedin.com/in/jos%C3%A9-pablo-orozco-salas-8b766bb8/" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="chip" href="https://platzi.com/p/porozco358/" target="_blank" rel="noopener">Platzi</a>
+      <a class="btn" href="mailto:orozco26pablo@gmail.com"><span lang="es">Escribirme</span><span lang="en">Email me</span></a>
+      <a href="mailto:orozco26pablo@gmail.com">orozco26pablo@gmail.com</a>
+      <a href="https://www.linkedin.com/in/jos%C3%A9-pablo-orozco-salas-8b766bb8/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/ozco26" target="_blank" rel="noopener">github.com/ozco26</a>
+      <small><span lang="es">Heredia, Costa Rica (UTC-6)</span><span lang="en">Heredia, Costa Rica (UTC-6)</span></small>
     </div>
-  </header>
-
-  <section aria-labelledby="proyectos">
-    <div class="sec-head">
-      <h2 id="proyectos">Proyectos</h2>
-      <span class="label">Fichas técnicas</span>
-    </div>
-
-    <div class="sheets">
-      <article class="sheet feature">
-        <div class="sheet-top">
-          <span class="label">ozco26/MarcaSegura · 2026</span>
-          <span class="tag">Desplegado en AWS</span>
-        </div>
-        <img class="shot" src="img/marcasegura.jpg" alt="Auditoría de marcas en MarcaSegura" width="1200" height="675">
-        <div class="sheet-body">
-          <div class="feature-grid">
-            <div style="display:grid; gap:16px; align-content:start; min-width:0">
-              <h3>MarcaSegura</h3>
-              <p class="lede">Sistema de control de asistencia con marcas geolocalizadas. Valida que cada entrada y salida venga de un dispositivo autorizado y de una ubicación plausible, y avisa a los administradores cuando algo no cuadra.</p>
-              <ul class="highlights">
-                <li>Detección de ubicaciones anómalas: distancia Haversine entre marcas y un límite de velocidad físicamente plausible (200 km/h).</li>
-                <li>Registro, autorización y bloqueo de dispositivos por empleado.</li>
-                <li>Bloqueo por intentos fallidos de inicio de sesión, con alertas por correo.</li>
-                <li>Bitácora de auditoría e incidentes clasificados por severidad.</li>
-              </ul>
-            </div>
-            <div style="display:grid; gap:16px; align-content:start; min-width:0">
-              <dl class="specs">
-                <dt>Backend</dt><dd>Python · Flask, organizado en servicios y blueprints</dd>
-                <dt>Datos</dt><dd>MySQL · SQLAlchemy · migraciones con Alembic</dd>
-                <dt>Seguridad</dt><dd>JWT en cookies HttpOnly con protección CSRF · roles</dd>
-                <dt>Pruebas</dt><dd>pytest · más de 1.000 líneas de pruebas</dd>
-                <dt>Despliegue</dt><dd>GitHub Actions → AWS Elastic Beanstalk, con acceso por rol IAM (OIDC), sin llaves guardadas</dd>
-              </dl>
-              <div class="pipeline">
-                <span class="label">Pipeline en cada push a main</span>
-                <div class="flow" role="list">
-                  <div class="step" role="listitem"><b>Push</b><span>main</span></div>
-                  <div class="step" role="listitem"><b>Pruebas</b><span>pytest</span></div>
-                  <div class="step" role="listitem"><b>Credenciales</b><span>OIDC · IAM</span></div>
-                  <div class="step end" role="listitem"><b>Deploy</b><span>Elastic Beanstalk</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="sheet-foot">
-          <span class="label">Rol: desarrollo y despliegue</span>
-          <a href="https://github.com/ozco26/MarcaSegura" target="_blank" rel="noopener">Ver código</a>
-        </div>
-      </article>
-
-      <article class="sheet">
-        <div class="sheet-top">
-          <span class="label">ozco26/EmotionTrack · 2026</span>
-          <span class="tag">IA</span>
-        </div>
-        <img class="shot" src="img/emotiontrack.jpg" alt="Chat de análisis de llamadas en EmotionTrack" width="1200" height="675">
-        <div class="sheet-body">
-          <h3>EmotionTrack</h3>
-          <p class="lede">Asistente para analizar llamadas grabadas: transcribe los audios y responde preguntas sobre lo que se dijo, citando la evidencia de la transcripción.</p>
-          <dl class="specs">
-            <dt>Backend</dt><dd>Python · Flask</dd>
-            <dt>Voz</dt><dd>Whisper, transcripción local</dd>
-            <dt>IA</dt><dd>RAG con LlamaIndex · Llama 3.1 en Groq</dd>
-          </dl>
-        </div>
-        <div class="sheet-foot">
-          <span class="label">Proyecto personal</span>
-          <a href="https://github.com/ozco26/EmotionTrack" target="_blank" rel="noopener">Ver código</a>
-        </div>
-      </article>
-
-      <article class="sheet">
-        <div class="sheet-top">
-          <span class="label">MrBot Software Solutions · 2025–2026</span>
-          <span class="tag">IoT</span>
-        </div>
-        <div class="sheet-body">
-          <h3>Plataforma IoT</h3>
-          <p class="lede">Aplicación de punta a punta desarrollada en equipo: los datos viajan desde las estaciones en campo hasta un backend y una interfaz web.</p>
-          <dl class="specs">
-            <dt>Backend</dt><dd>Python · FastAPI</dd>
-            <dt>Datos</dt><dd>PostgreSQL</dd>
-            <dt>Frontend</dt><dd>Vue + Vite</dd>
-            <dt>Equipo</dt><dd>Scrum, entregas incrementales</dd>
-          </dl>
-        </div>
-        <div class="sheet-foot">
-          <span class="label">Proyecto laboral</span>
-          <span style="color:var(--muted)">Código privado del cliente</span>
-        </div>
-      </article>
-
-      <article class="sheet">
-        <div class="sheet-top">
-          <span class="label">ozco26/V-Vuelos · 2024</span>
-          <span class="tag">Equipo</span>
-        </div>
-        <img class="shot" src="img/v-vuelos.jpg" alt="Tablero de salidas de V-Vuelos" width="1200" height="675">
-        <div class="sheet-body">
-          <h3>V-Vuelos</h3>
-          <p class="lede">Sistema integral que simula la operación de un aeropuerto: portal de pasajeros para buscar y comprar vuelos, y panel administrativo para la operación.</p>
-          <ul class="highlights">
-            <li>Pasajeros: búsqueda de llegadas y salidas, compra, tarjetas y métodos de pago, reCAPTCHA e inicio de sesión con Google.</li>
-            <li>Administración: aerolíneas por país, estado de puertas, usuarios y permisos, bitácora y registro de errores.</li>
-          </ul>
-          <dl class="specs">
-            <dt>Stack</dt><dd>C# · ASP.NET MVC · Entity Framework · SQL Server · Bootstrap</dd>
-          </dl>
-        </div>
-        <div class="sheet-foot">
-          <span class="label">Proyecto académico en equipo</span>
-          <a href="https://github.com/ozco26/V-Vuelos" target="_blank" rel="noopener">Ver código</a>
-        </div>
-      </article>
-
-      <article class="sheet">
-        <div class="sheet-top">
-          <span class="label">ozco26/Mr-books · 2023</span>
-          <span class="tag">Marketplace</span>
-        </div>
-        <img class="shot" src="img/mr-books.jpg" alt="Catálogo de Mr. Books" width="1200" height="675">
-        <div class="sheet-body">
-          <h3>Mr. Books</h3>
-          <p class="lede">Marketplace para intercambiar y vender libros usados, con tres perfiles: cliente, vendedor y administrador.</p>
-          <ul class="highlights">
-            <li>Publicación de libros con aprobación del administrador antes de salir a la venta.</li>
-            <li>Catálogo por categorías, carrito, pago y seguimiento de pedidos.</li>
-          </ul>
-          <dl class="specs">
-            <dt>Stack</dt><dd>Node.js · Express · EJS · MySQL</dd>
-          </dl>
-        </div>
-        <div class="sheet-foot">
-          <span class="label">Proyecto académico</span>
-          <a href="https://github.com/ozco26/Mr-books" target="_blank" rel="noopener">Ver código</a>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <section aria-labelledby="experiencia">
-    <div class="sec-head">
-      <h2 id="experiencia">Experiencia</h2>
-      <span class="label">2013 – hoy</span>
-    </div>
-    <div class="timeline">
-      <div class="job">
-        <span class="when">2025 – hoy</span>
-        <div><h3>Software Engineer <span>· MrBot Software Solutions · remoto</span></h3>
-        <p>APIs REST e integraciones, aplicación IoT con FastAPI, PostgreSQL y Vue, despliegues automatizados en Linux y 20% más de cobertura de pruebas en el producto principal.</p></div>
-      </div>
-      <div class="job">
-        <span class="when">2023 – 2024</span>
-        <div><h3>Desarrollador web <span>· Freelance</span></h3>
-        <p>Aplicaciones web con Node.js y SQL, incluido un sistema de e-commerce.</p></div>
-      </div>
-      <div class="job">
-        <span class="when">2019</span>
-        <div><h3>Ingeniero de desarrollo de software <span>· Veinsa Motors</span></h3>
-        <p>Automatización de leads, integración con Facebook y con sistemas de terceros, plataforma interna de tickets.</p></div>
-      </div>
-      <div class="job earlier">
-        <span class="when">2013 – 2025</span>
-        <div><h3>Ingeniería de proyectos, soporte y ventas técnicas <span>· Legrand, Grupo VMA, Bolwar, COCOCO y otras</span></h3>
-        <p>Soluciones de redes, datacenter y seguridad para Centroamérica, el Caribe y Ecuador; herramientas internas que redujeron más de 10% el trabajo manual; licitaciones públicas en SICOP.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section aria-labelledby="stack">
-    <div class="sec-head">
-      <h2 id="stack">Herramientas</h2>
-      <span class="label">Con las que trabajo</span>
-    </div>
-    <div class="stack">
-      <div><span class="label">Backend y datos</span>
-        <ul><li>Python</li><li>FastAPI</li><li>Flask</li><li>Node.js</li><li>C# / .NET</li><li>PostgreSQL</li><li>MySQL</li><li>SQL Server</li><li>SQLAlchemy</li></ul></div>
-      <div><span class="label">Entrega y operación</span>
-        <ul><li>Git</li><li>GitHub Actions</li><li>AWS Elastic Beanstalk</li><li>Linux</li><li>Bash</li><li>pytest</li><li>unittest</li><li>Scrum</li></ul></div>
-      <div><span class="label">Frontend, IoT y automatización</span>
-        <ul><li>Vue + Vite</li><li>Figma</li><li>C++ / Arduino</li><li>n8n</li><li>Agentes de IA</li></ul></div>
-    </div>
-  </section>
-
-  <section aria-labelledby="formacion">
-    <div class="sec-head">
-      <h2 id="formacion">Formación</h2>
-      <span class="label">Universitaria</span>
-    </div>
-    <div class="edu">
-      <div><b>Bachillerato en Ingeniería Informática</b><span>ULACIT · graduación en diciembre de 2026</span></div>
-      <div><b>Licenciatura en Ingeniería Eléctrica</b><span>Universidad Fidélitas · plan de estudios concluido</span></div>
-      <div><b>Inglés intermedio-alto</b><span>TOEIC 780/990 · Listening 455 (nivel B2)</span></div>
-    </div>
-  </section>
-
-  <footer>
-    <p>¿Buscas a alguien que entienda el sistema y el negocio detrás?</p>
-    <a class="chip" href="https://www.linkedin.com/in/jos%C3%A9-pablo-orozco-salas-8b766bb8/" target="_blank" rel="noopener">Escríbeme por LinkedIn</a>
-  </footer>
-</div>
+  </div>
+</footer>
 
 <script>
-  document.getElementById("copy-mail").addEventListener("click", function () {
-    var btn = this, text = document.getElementById("mail").textContent;
-    function done(msg) { btn.textContent = msg; setTimeout(function () { btn.textContent = "Copiar"; }, 1800); }
-    function fallback() {
-      var r = document.createRange(); r.selectNodeContents(document.getElementById("mail"));
-      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); done("Seleccionado");
-    }
-    try {
-      navigator.clipboard.writeText(text).then(function () { done("Copiado"); }, fallback);
-    } catch (e) { fallback(); }
-  });
+(function () {
+  var root = document.documentElement;
+  function setLang(l) {
+    root.setAttribute("data-l", l); root.lang = l;
+    document.querySelectorAll(".lang button").forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.set === l)); });
+    try { localStorage.setItem("lang", l); } catch (e) {}
+  }
+  var initial = "es";
+  try {
+    var q = new URLSearchParams(location.search).get("lang");
+    initial = q === "en" || q === "es" ? q : (localStorage.getItem("lang") || ((navigator.language || "es").slice(0, 2) === "en" ? "en" : "es"));
+  } catch (e) {}
+  setLang(initial);
+  document.querySelectorAll(".lang button").forEach(function (b) { b.addEventListener("click", function () { setLang(b.dataset.set); }); });
+})();
 </script>
-
 </body>
 </html>
